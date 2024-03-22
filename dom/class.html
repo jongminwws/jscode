@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="special">id선택자를 이용해서 선택</p>
+    <p class="commons">class선택자1</p>
+    <p class="commons">class선택자2</p>
+    <p class="commons">class선택자3</p>d
+
+    <p>tag 이용</p>
+    <p>tag 이용</p>
+    <p>tag 이용</p>
+    <script>
+        let special = document.getElementById("special");
+        //console.log(special);
+
+        //class 로 html
+        let commons = document.getElementsByClassName("commons");
+        console.log(commons[0])
+        //tag로 html
+        let tagName = document.getElementsByTagName("p")
+        //console.log(tagName)
+        //css 선택자 (# 아이디명)
+        let cssSpecia = document.querySelector("#special");
+        //console.log(cssSpecia);
+        // css 선택자 클래스 명
+        let cssCommons = document.querySelectorAll(".commons");
+        console.log(cssCommons[1]);
+        for(i=0;i<commons.length;i++){
+            console.log(commons[i]);
+        }
+        //css선택자 태그명
+        let cssTagname=document.querySelectorAll("p");
+        //console.log(cssTagname);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        첫번째 숫자 : <input type="text" id="num1" class="num"> <br>
+        두번째 숫자 : <input type="text" id="num2" class="num"> <br>
+        세번째 숫자 : <input type="text" id="num3" class="num"> <br>
+        네번째 숫자 : <input type="text" id="num4" class="num"> <br>
+        <p id="sum">0</p>
+        <p id="se">0</p>
+        <p id="sw">0</p>
+        <button onclick="sua(),sub(),suc()">합계</button>
+        <script>
+            //id 를 이용하여 첫번째숫자 1~4번 째 슷자까지의 합을 계산;
+            function sua() {
+                let x = document.getElementById("num1").value;
+                let y = document.getElementById("num2").value;
+                let z = document.getElementById("num3").value;
+                let v = document.getElementById("num4").value;
+                
+                let sums = parseInt(x) + parseInt(y) + parseInt(z) + parseInt(v);
+                
+                document.getElementById("sum").innerText = sums;
+            }
+        
+            //class를 이용하여 첫번째 숫자~4번째 숫자까지의 합을 계산
+
+            function sub() {
+                let nums = document.getElementsByClassName("num");
+                let sum = 0;
+                for (let i = 0; i < nums.length; i++) {
+                sum += parseInt(nums[i].value);
+                }
+                document.getElementById("se").innerText = sum;
+            }
+
+            //tag를 이용하여 계산
+
+            function suc() {
+                let x = document.getElementsByTagName("input");
+                let sum = 0;
+                for (let i =0; i <4;i++){
+                    sum += parseInt(x[i].value);
+                }
+                    document.getElementById("sw").innerHTML = sum
+            }
+        </script>
+    </body>
+    </html>

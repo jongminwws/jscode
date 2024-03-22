@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="text" rows=5 cols=20>this is textarea </textarea>
+    <input type="button" onclick="sub()" value="클릭">
+    <textarea id="result" rows=5 cols=20></textarea>
+    <script>
+        function sub() {
+            let s ;
+            s = document.getElementById("text").value;
+            document.getElementById("result").value = s;
+        }
+    </script>
+</body>
+</html>
