@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ta" onclick="addNode('동적으로 텍스트가 추가 됩니다')". style="font: 20px italic;">여기를 클랙하세여</div>
+
+    <script>
+        function addNode(t) {
+            let node = document.createElement("p"); // 노드생성
+            node.innerHTML = t;
+            document.getElementById("ta").appendChild(node); // 노드추가
+        }
+
+        // insertBefore(node , document.getElementById('ta').firstChild); // 만약 div 태그의 바로 뒤에 첫 번째 자식 노드로 추가하고싶으면 이렇게 사용하면 된다
+    </script>
+</body>
+</html>

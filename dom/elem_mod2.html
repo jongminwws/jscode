@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">this is pa</p> <!--이게 변경이 된다-->
+    <button onclick="sub()">누르셈</button>
+    <script>
+        function sub() {
+            document.getElementById("p1").style.color = "red"; // id 가 p1 인 요소의 css 속성을 변경한다
+            document.getElementById("p1").style.fontFamily = "Century Schoolbook";
+            document.getElementById("p1").style.fontStyle = "italic";
+        }
+    </script>
+</body>
+</html>

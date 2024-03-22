@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--checkbox는 여러가지 데이터 저장이 가능하니 배열로 저장한다 -->
+    <input type="checkbox" name="hobby" value="soccer">축구
+    <input type="checkbox" name="hobby" value="book">책읽기
+    <input type="checkbox" name="hobby" value="bike">자전거타기
+    <input type="checkbox" name="hobby" value="baseball">야구
+
+    <button onclick="sub()">체크박스 클릭</button>
+    <br><br><br> <!--라디오 버튼은 하나만 저장이 가능해서 변수로 저장한다-->
+    <input type="radio" name="color" value="red">빨간색
+    <input type="radio" name="color" value="blue">파란색
+    <input type="radio" name="color" value="green">녹색
+    <button onclick="suc()">체크박스 클릭</button>
+    <br><br><br>
+    <select id="re">
+        <option>학생</option>
+        <option>전문직</option>
+        <option>직장인</option>
+        <option>무직</option>
+    </select>
+    <input type="button" value="클릭" onclick="se()">
+    <input type="text" id="we">
+    <script>
+        function se() {
+            let se = document.getElementById("re").selectedIndex;
+            let s = document.getElementById("re").options[se].value;
+            document.getElementById("we").value = s;
+            //console.log(se)
+        }
+
+
+
+
+
+
+
+
+
+
+        function sub() {
+            // name 값이 hobby 인것을 배열에 저장 (h 배열에 저장)
+            let h = document.getElementsByName("hobby")
+            for (let i=0;i<h.length;i++){
+                if(h[i].checked ==true ) { // 체크 된것만 true가 나옴
+                    console.log(h[i].value) //선택된거에 대한 value
+                }
+            }
+        }
+
+        function suc() {
+            let a = document.getElementsByName("color")
+            for (let j =0;j<a.length;j++) {
+                if(a[j].checked == true) { // 체크 된것만 true가 나옴
+                    console.log(a[j].value) //선택된거에 대한 value
+                }
+            }
+        }
+    </script>
+</body>
+</html>

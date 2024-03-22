@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="head">다크 모드와 라이트 모드</h2>
+    <p id="p1">버튼을 누르면 다크모드와 라이트 모드가 토글됩니다</p>
+    <button onclick="sub()">다크모드 토글</button>
+
+    <script>
+        let mode = "white"
+        function sub() {
+            if ( mode == "white") { // mode가 white라면 
+                document.getElementsByTagName("body")[0].style.backgroundColor = "black"; // body요소 만 선택 하고 배경색을 블랙으로 바꾼다
+                document.getElementsByTagName("body")[0].style.color = "white"; // body 요소만 선택하고 글자 색을 white로 바꾼다
+                mode = "black"; // 그리고 mode를 블랙으로 설정
+            } else { // mode가 white가 아니면 
+                document.getElementsByTagName("body")[0].style.backgroundColor = "white"; //body요소 만 선택 하고 배경색을 white로 바꾼다
+                document.getElementsByTagName("body")[0].style.color = "black"; //body 요소만 선택하고 글자 색을 blakc 으로 바꾼다
+                mode = "white"; // 그리고 mode를 white로 설정
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>write()</h2>
+    <script>
+        document.write("<h3> DOM 완성전까지는 기존 문서에 추가됨. </h3>") // 파싱이 끝나기 전까지는 write() 호출하면 기존 문서의 끝에 추가된다.
+    </script>
+    <button onclick="sub()">write() 호출</button>
+    <script>
+        function sub() {
+            document.write("<h1>write() 호출</h1>") // 파싱이 끝난후에 호출하면 기존의 문서를 삭제하고 새로운 문서를 만들게 된다.
+        }
+    </script>
+</body>
+</html>
