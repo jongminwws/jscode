@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            font-family: 굴림,sans-serif;
+            text-align: center;
+        }
+        #dice {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            background-color: yellow;
+            border: 1px solid gray;
+            border-radius: 10px;
+            font-size: 100px;
+        }
+        button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 10px auto;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h3>주사위 굴리기 게임</h3>
+    <p id="dice"></p>
+    <button onclick="roll()">주사위 굴리기</button>
+
+    <script>
+        function roll() {
+            let re = Math.floor(Math.random() * 6) +1;
+            let dice = document.getElementById("dice");
+            dice.innerHTML = re;
+        }
+    </script>
+</body>
+</html>
