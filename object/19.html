@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // find 함수 선언  
+        function find(arr,value){ // 함수의 매개변수 arr = 배열자체, value = hello
+        
+        //document.write(`${value} -> ${arr.indexOf(value)}`) // value가 hello가 되고 value의 인덱스 번호는 0 이라서 hello -> 0 이 출력이 된다
+        return (`${value} -> ${arr.indexOf(value)}`)
+    }
+    let arr = ["hello",10,20,32.6,true];
+    //find(arr,"hello"); // find 함수 호출  함수의 인수 
+    document.write(`${find(arr,"hello")}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(153, 102, 53);
+    font-family: 'Times New Roman', Times, serif;
+    color: blue;
+}
+h1{
+    color: red;
+    border-bottom: 1px solid gray;
+}

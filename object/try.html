@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sub()">테스트</button>
+    <script>
+        let msg = "";
+        function sub() {
+            try {
+                allert("hello world")
+            }
+            catch (error) {
+                msg = "오류 뜸" + error.message;
+                alert(msg)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //1부터 사용자가 입력한 숫자까지의 합
+        let num = parseInt(prompt("양수를 입력하세여"));
+        //1부터 100까지 의 합
+        let sum = 0; // 마찬가지로 전역변수로 사용하기 위해 for문 밖에서 사용
+        for (let i =1; i<=num;i++) {
+                sum += i;
+                
+        }
+        document.write("숫자의 합 : " + sum)
+    </script>
+</body>
+</html>

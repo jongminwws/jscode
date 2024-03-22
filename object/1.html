@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="colock"></h2>
+    <h2 id="ra"></h2>
+
+    
+    <script>
+        function clo() {
+            let now = new Date();
+            let s = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+            document.getElementById("colock").innerHTML = "현재 시각"+ s+ "<br>";
+            setTimeout('clo()', 1000);
+        }
+        clo();
+
+        function xmas(){
+            let now = new Date();
+            let newyear = new Date('December 25,' +(now.getUTCFullYear()));
+            let diff = newyear -now;
+            let milliseconds = Math.floor(diff % 1000);
+            diff = diff / 1000;
+            let sendos = Math.floor(diff % 60);
+            diff = diff / 60;
+            let minutes = Math.floor(diff % 60);
+            diff = diff / 60;
+            let hours = Math.floor(diff % 24);
+            diff = diff / 24;
+            let days = Math.floor(diff);
+            let outstr = '금년 크리스마스 까지' + days + '일' + hours + '시간' + minutes;
+            outstr += '분,' + sendos + '초' + '남았습니다';
+            document.getElementById("ra").innerHTML = outstr;
+            //1초가 지나면 다시 함수를 호출한다
+            setTimeout("xmas()",1000);
+        }
+        //타이머 시작
+        xmas();
+    </script>
+</body>
+</html>

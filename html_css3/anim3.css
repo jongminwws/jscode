@@ -1,0 +1,33 @@
+div {
+    width: 100px;
+    height: 50px;
+    color: white;
+    position: relative;
+    margin: 10px;
+    animation: myanim 20s infinite; /* 이름은 myanim 이고 20초 동안 지속 무한번 실행 */
+}
+
+#q {
+    animation-timing-function: linear; /* 느린 속도로 시작했다가 빨라지고 다시 느린속도로 끝난다 */
+    background-color: red;
+}
+
+#w {
+    animation-timing-function: ease; /* 처음부터 끝까지 같은 속도로 애니메이션을 지정한다 */
+    background-color: aqua;
+}
+
+#e {
+    animation-timing-function: ease-in; /* 끝날 때 속도가 줄어든다 */
+    background-color: blue;
+}
+
+#r {
+    animation-timing-function: ease-out; /* 시작을 천천히 한다 */
+    background-color: chartreuse;
+}
+
+@keyframes myanim {
+    from {left: 0px;}
+    to {left: 50px;}
+}

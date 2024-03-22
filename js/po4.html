@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="fun()">누르면 배경이 바뀜</button>
+    <script>
+        function fun() {
+            let x = Math.floor(Math.random() * 256); //0~255 까지의 숫자 중에서 임의의 숫자          //math객체 에 랜덤이라는 함수 안에 임의의 숫자를 구한다
+            let y = Math.floor(Math.random() * 256);
+            let z = Math.floor(Math.random() * 256);
+
+            let color = `rgb(${x}, ${y}, ${z})`; // let color = "rgb("+x+","+y+","+z+")";
+
+            document.body.style.background =  color ;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    구입날짜 : <input type="date" id="se">
+    <button onclick="syb()">검사</button>
+    <script>
+        // 쇼핑몰이라고 가정, 구입한지 30일 지난 물건은 교환불가
+        function syb() {
+            // 입력된 구입날짜를 가져옴
+            let pay = document.getElementById("se").value;
+            
+            // 구입일을 나타내는 Date 객체 생성
+            let payDate = new Date(pay);
+
+            // 현재 날짜를 나타내는 Date 객체 생성
+            let today = new Date();
+            
+            // 현재 날짜에서 구입일로부터 경과한 시간을 밀리초로 계산
+            let diff = today.getTime() - payDate.getTime();
+            
+            // 밀리초를 일로 변환하여 계산
+            let days = Math.floor(diff / (1000*3600*24));
+
+            // 구입일로부터 현재까지 경과한 일수가 30을 초과하면 교환불가
+            if (days > 30) {
+                alert("교환불가");
+            } else {
+                alert("교환가능");
+            }
+        }
+    </script>
+</body>
+</html>

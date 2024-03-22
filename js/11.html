@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        첫번째 정수 : <input id="se"> <br>
+        두번째 징수 : <input id="sw"> <br>
+        결과 : <input id="sa"> <br>
+        <button onclick="sub()">+</button>
+        <button onclick="suq()">-</button>
+        <button onclick="suw()">*</button>
+        <button onclick="sue()">/</button>
+    </form>
+    <script>
+        function sub() {
+            let x = document.getElementById("se").value
+            let y = document.getElementById("sw").value
+            let sum = parseInt(x) + parseInt(y);
+            document.getElementById("sa").value = sum
+
+        }
+        function suq() {
+            let x = document.getElementById("se").value
+            let y = document.getElementById("sw").value
+            let ma = parseInt(x) - parseInt(y);
+            document.getElementById("sa").value = ma
+
+        }
+        function suw() {
+            let x = document.getElementById("se").value
+            let y = document.getElementById("sw").value
+            let ko = parseInt(x) * parseInt(y);
+            document.getElementById("sa").value = ko
+
+        }
+        function sue() {
+            let x = document.getElementById("se").value
+            let y = document.getElementById("sw").value
+            let na = parseInt(x) / parseInt(y);
+            document.getElementById("sa").value = na
+
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>사칙연산 계산기</h1>
+    첫번째 정스 : <input type="text" id="firstnum"> <br>
+    두번째 정수 : <input type="text" id="secondnum"> <br>
+    합계 : <input type="text" id="result"> <br>
+    <input type="button" value="+" onclick="cal('+')">
+    <input type="button" value="-" onclick="cal('-')">
+    <input type="button" value="*" onclick="cal('*')">
+    <input type="button" value="/" onclick="cal('/')">
+    
+    <script>
+        let firstnum = document.getElementById("firstnum");
+        let secondnum = document.getElementById("secondnum");
+        let result = document.getElementById("result");
+
+        function cal(op){
+            if(op=='+'){
+                result.value=parseInt(firstnum.value)+parseInt(secondnum.value);
+            }else if (op =='-' ){ 
+                result.value=parseInt(firstnum.value)-parseInt(secondnum.value);
+            }else if (op == '*') {
+                result.value=parseInt(firstnum.value)*parseInt(secondnum.value);
+            } else {
+                result.value=parseInt(firstnum.value)/parseInt(secondnum.value);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--<h2 id="rema"></h2>-->
+    <!-- 아이디 : <input type="text" id="id">
+    <button onclick="ch()">검사</button> -->
+
+    <script>
+
+        /* let today = new Date(); //현재 날짜와 현재 시간
+        let userd = new Date (2023,6,21); // 내가 원하는 날짜  월은 0부터 시작함
+        let userdt = new Date(2023,6,21,18,30,0); // 내가원하는 날짜  //월은 0부터 시작함
+        document.write(today+"<br>");
+        document.write(userd+ "<br>");
+        document.write(userdt+"<br>"); */
+        
+        /*let today = new Date();
+        document.write(today + "<br>"); //현재시간 현재날짜
+        document.write(today.getFullYear()+"<br>"); //!연도만 입력할 때 getFullyear
+        document.write(today.getMonth()+"<br>"); //! 월만 입력할 때 */
+
+        //let date1 = new Date("07/30/2022");
+        //let date2 = new Date("08/30/2022");
+
+        //let diff = date2.getTime() - date1.getTime();
+        //let diff_days = diff / (1000 * 3600*24);
+        //document.write(date1 + "<br>와 <br>"+date2 + "<br> 날짜간의 총 일수 : " + diff_days);
+
+
+        /* let date1 = new Date("07/30/2022");
+            let date2 = new Date("08/30/2022");
+
+        let diff = date2.getTime() -date1.getTime();
+        let diff_days = diff /(1000 * 3600 * 24);
+        document.write(date1 + "<br> 와 <br>" + date2 + "<br> 날짜 간의 총 일수 : " + diff_days);*/
+
+
+        /*function xmas() {
+            //현재 날짜
+            let now = new Date();
+            //크리스마스 날짜
+            let newyear= new Date("December 25 2024")
+            //크리스마스 날짜 - 현재날짜
+            let diff = newyear - now;
+
+            let milliseconds = Math.floor(diff % 1000); // 
+            diff = diff / 1000;
+            let sendos = Math.floor(diff % 60);
+            diff = diff / 60
+            let minutes = Math.floor(diff % 60);
+            diff = diff / 60;
+
+            let hours = Math.floor(diff % 24);
+            diff = diff / 24;
+
+            let days = Math.floor(diff);
+            let outstr = "금년 크리스마스까지 " + days + "일," + hours + "시간," + minutes;
+            outstr += "분, "+sendos + "초 " + "남았습니다";
+
+            document.getElementById("rema").innerHTML=outstr;
+
+            setTimeout("xmas()",1000); // xmas 함수를 1초마다 함수를 호출 실행 
+        }
+            xmas(); */
+
+            let s1 = "안녕하세여" // 문자열리터럴
+            let s2 = new String("안녕하세요") // string 객체 문자열 객체
+
+            
+            /*document.write(a.length)
+            function ch() {
+                let a = document.getElementById("id").value;
+
+                if(a.length < 6) {
+                    alert("아이디는 6글자 이상이어야 한다");
+                }
+            }*/
+
+            let str = "javaScript";
+            document.write(str.substring(0,4)+ " <br>") // j a v a s c r i p t 인덱스 번호가 0 부터 3까지 4가 들어가면 4까지가 아니라 4 이전까지 잘린다. 4를 하면 3까지 짤린다.
+
+            let p = "the quick brown fox jumps over the lazy dog";
+            document.write(p.replace("dog","cat") + "<br>")
+        </script>
+</body>
+</html>

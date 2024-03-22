@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form action="#">
+        첫번째 정수 : <input id="se"> <br>
+        두번째 징수 : <input id="sw"> <br>
+        합계 : <input id="sa">
+        <button onclick="sub()">계산</button>
+    </form>
+    <script>
+            function sub() {
+            let x =document.getElementById("se").value
+            let y =document.getElementById("sw").value
+            let sum = parseInt(x)+parseInt(y)
+            document.getElementById("sa").value = sum
+            } 
+    </script>
+</body>
+</html>
+

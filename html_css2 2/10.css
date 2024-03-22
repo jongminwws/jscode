@@ -1,0 +1,27 @@
+#sq {
+    border-top: 3px solid black;
+    border-right: 3px dotted black;
+    border-bottom: 3px dotted black;
+    border-left: 3px double black;
+}
+
+#sw {
+    border-top: 3px solid black;
+    border-right: 3px dotted black;
+    border-bottom: 3px dotted black;
+    border-left: 3px double black;
+}
+
+#se {
+    border-top: 5px solid red;
+    border-right: 5px solid green;
+    border-bottom: 5px solid blue;
+    border-left:5px solid yellow;
+}
+
+#sr {
+    border-top: 1px solid black;
+    border-right: 2px solid black;
+    border-bottom: 3px solid black;
+    border-left: 4px solid black;
+}

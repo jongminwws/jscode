@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="usc()">색깔바뀜 ㅋ</button>
+
+    <script>
+        function usc() {
+            let x = Math.floor(Math.random() * 256);
+            let y = Math.floor(Math.random() * 256);
+            let z = Math.floor(Math.random() * 256);
+
+            let color = `rgb(${x},${y},${z})`;
+            document.body.style.background= color;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 현재 시간을 밀리초 단위로 가져옴
+        //let x = new Date().getTime();
+
+        //for (let i=0;i<1000000;i++){
+        //}
+        // 반복문 실행 후의 현재 시간을 밀리초 단위로 가져옴
+        //let y = new Date().getTime();
+        // 실행 전과 후의 시간 차이를 계산하여 측정
+        //let z = y - x;
+
+        //document.write(z)
+        let sum = "";
+            let start = performance.now(); //performance.now 로 실행시간 출력
+        for ( i = 0; i<=1000000;i++){
+            sum += i; // sum = sum + i 
+        }
+        let end = performance.now(); // performance.now로 끝난시간 출력
+
+        let time = end - start; // 끝난시간 - 실행시간 하면 코드의 실행시간이 나옴
+        document.write(`${time} ms`) // 출력
+    </script>
+</body>
+</html>

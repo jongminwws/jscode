@@ -1,0 +1,29 @@
+#q {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: blue;
+    z-index: 200px;
+    width: 100px;
+    height: 60px;
+}
+
+#w {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    background-color: yellow;
+    width: 100px;
+    height: 60px;
+    z-index: 100px;
+}
+
+#e {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    background-color: green;
+    width: 100px;
+    height: 60px;
+    z-index: 50px;
+}

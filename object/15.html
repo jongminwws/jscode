@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let str = "buy xxx is a";
+
+        //문자열에 "xxx"가 포함되어 있는지 확인하는 함수 정의
+        /*function check(str) {
+            if (str.includes("xxx")) {
+                return true; // "xxx"가 포함되어 있으면 true 반환
+            } else {
+                return false; // "xxx"가 포함되어 있지 않으면 false 반환
+            }
+        }
+        // check 함수를 호출하여 문자열에 "xxx"가 포함되어 있는지 확인하고 결과를 변수에 저장
+        let result = check(str);
+        document.write(str + " "+  result);
+        */
+        /*function check(str) {
+            document.write(`check(buy xxx now) -> ${str.indexOf("yy") >= 0}`);
+        }
+        check("buy XXX now");*/
+
+        function check(str) {
+            return (`check(buy xxx now) -> ${str.indexOf("XXX") >= 0}`);
+        }
+        document.write(check("buy XXX now"));
+    </script>
+</body>
+</html>

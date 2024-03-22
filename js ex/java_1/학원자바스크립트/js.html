@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        let x = 10.0;
+        let y = 20.0;
+        document.write(x+y  + "<br>");
+        document.write(x-y + "<br>");
+        document.write(x * y + "<br>")
+        document.write(x / y + "<br>")
+        document.write(x % y + "<br>") */
+
+        //증감 연산자
+
+        /* let a= 10;
+        let b = 0;
+
+        b = a++; // 후위형  a값이 먼저 b에 저장이 되고 그 다음 a값이 1씩 증가가 된다 선 저장 후 증가
+        document.write(a+"<br>"); //11
+        document.write(b+"<br>"); //10
+
+        a=10;  // 원래 값으로 되돌림
+        document.write(a+"<br>");
+        document.write(b+"<br>");
+
+        b = ++a; // 전위형 선증감 후 저장  a값을 먼저 증가하고 그 다음 b에 저장한다.
+        document.write(a+"<br>"); // 11
+        document.write(b+"<br>"); // 11 */
+
+        //활당 (대입)
+        let x=3;
+        let y =4;
+
+        document.write(x == 3 && y == 7 + "<br>") // == 는 비교 && 논리연산자  false 
+        document.write(x == 3 || y == 4 + "<br>") //true
+
+        let max_value; // 현재는 undifinded
+        max_value = (x > y) ? x : y; // 거짓이라서 y값을 저장한다 만약 참이라면 x값을 저장
+        document.write(max_value); 
+    </script>
+</body>
+</html>

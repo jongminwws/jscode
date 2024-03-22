@@ -1,0 +1,30 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <script>
+            // 함수 선언부에 return이 없을 때
+            /*function strCap(str) {
+            // 문자열의 첫 글자를 대문자로 변환한 후 나머지 문자열과 합치는 작업
+            //charAt(0) dl 첫 글자를 나타냄
+            let x  = str.charAt(0).toUpperCase() + str.slice(1) 
+            document.write(`${str}<br>${x}`)
+        }
+        strCap("hong") // 매게변수를 이용해서 인수에 hong을 적고 str이라는 변수에는 hong이라는 문자열을 저장한다
+        */
+        function strCap(str) {
+            // 문자열의 첫 글자를 대문자로 변환한 후 나머지 문자열과 합치는 작업
+            //charAt(0) dl 첫 글자를 나타냄
+            let x  = str.charAt(0).toUpperCase() + str.slice(1)
+        
+            return(`${str}<br>${x}`)
+        }
+            document.write(strCap("hong"))
+        </script>
+    </body>
+    </html>

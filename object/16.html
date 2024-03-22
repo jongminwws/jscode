@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //let mon = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+        // 현재 날짜를 가져오기 위해 Date 객체를 생성
+        //let x = new Date()
+        // 현재 월을 가져와서 배열에서 해당 월의 이름을 가져옴
+        //let mons = mon[x.getMonth()];
+        //document.write("현재월: " + mons)
+
+        let today = new Date();
+        //월 이름을 저장하는 배열
+        let mon = ["ja","fe","ma","ap","may","ju","au","se","oc","no","de"]
+
+        document.write(`현재월 : ${mon[today.getMonth()]}`)
+
+    </script>
+</body>
+</html>

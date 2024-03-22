@@ -1,0 +1,7 @@
+.s {
+    font-size: 30px; color: blue; text-decoration: underline; display: inline; font-style: italic; font-family: 궁서체;
+}
+
+#bold {
+    text-decoration: line-through; font-size: 20px; color: blue; font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

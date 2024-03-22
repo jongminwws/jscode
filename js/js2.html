@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="se">this is a heading</h1>
+    <button onclick="sub()">클릭하세요</button>
+    <script>
+        function sub() {
+            document.getElementById("se").innerHTML = "페이지가 적재된" //아이디가 text인 것에 글자를 덮어쓴다.
+            //document.write("페이지가 적재돤") // write를 쓰면 페이지 전체가 덮어씌워진다. 버튼까지 사라짐
+            document.getElementById("se").style.color = "red";
+        }
+
+        console.log("하이")
+    </script>
+</body>
+</html>

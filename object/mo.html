@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가와사키</title>
+    <link type="text/css" rel="stylesheet" href="mo.css">
+</head>
+<body>
+    <h1 id="sz"></h1>
+    <h1 id="sw"></h1>
+    <h1 id="sd"></h1>
+    <h1 id="ss"></h1>
+    <img src="img/zz.jpg" width="300" height="300">
+    <button id="ger1">기어 1 올리기</button>
+    <button id="ger2">기어 2 올리기</button>
+    <button id="ger3">기어 3 올리기</button>
+    <button id="ger4">기어 4 올리기</button>
+    <button id="ger5">기어 5 올리기</button>
+    <button id="ger6">기어 6 올리기</button>
+    <button id="geDown">기어 내리기</button>
+    <button id="reset">기어 N단</button>
+    <script>
+        function motos(model, color, speed, ger) {
+            this.model = model;
+            this.color = color;
+            this.ger = ger;
+            this.speed = speed;
+            this.chger = function (number) {
+                if (number >= 1 && number <= 6) {
+                    this.ger = number;
+                    this.speed += 10;
+                    updateSpeedDisplay();
+                } else {
+                    alert("Invalid gear");
+                }
+            };
+            this.changeGearDown = function () {
+                if (this.ger > 1) {
+                    this.ger--;
+                    this.speed -= 20;
+                    updateSpeedDisplay();
+                }
+            };
+            this.reset = function () {
+                this.ger = 0;
+                this.speed = 0;
+                updateSpeedDisplay();
+            };
+        }
+        
+        let moto = new motos("가와사키 닌자 300", "green", 0, 300);
+        document.getElementById("sz").innerHTML = "오토바이 " + moto.model + "입니다";
+        document.getElementById("sw").innerHTML = "색상은 " + moto.color + "입니다";
+        document.getElementById("sd").innerHTML = "최대 속력은 300 입니다";
+        function updateSpeedDisplay() {
+            document.getElementById("ss").innerHTML = "Speed: " + moto.speed + " Gear: " + moto.ger;
+        }
+        
+        document.getElementById("ger1").addEventListener("click", function () {
+            moto.chger(1);
+        });
+        
+        document.getElementById("ger2").addEventListener("click", function () {
+            moto.chger(2);
+        });
+        
+        document.getElementById("ger3").addEventListener("click", function () {
+            moto.chger(3);
+        });
+        
+        document.getElementById("ger4").addEventListener("click", function () {
+            moto.chger(4);
+        });
+        
+        document.getElementById("ger5").addEventListener("click", function () {
+            moto.chger(5);
+        });
+        
+        document.getElementById("ger6").addEventListener("click", function () {
+            moto.chger(6);
+        });
+        
+        
+        document.getElementById("geDown").addEventListener("click", function () {
+            moto.changeGearDown();
+        });
+        
+        document.getElementById("reset").addEventListener("click", function () {
+            moto.reset(0);
+        });
+    </script>
+</body>
+</html>

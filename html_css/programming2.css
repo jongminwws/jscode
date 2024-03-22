@@ -1,0 +1,13 @@
+#header {
+    font-size: 15pt; color: blue; text-align: center;
+}
+#we {
+    border-style: solid; margin: 20px; background-color: green; text-align: center; border-color: red; 
+}
+
+#se {
+    border-style:  solid; margin: 20px; background-color: #ffaeee; text-align: center; border-color: red;
+}
+#sq {
+  border-style: solid;  margin: 20px; background-color: rgb(98,155,110); color: white; text-align: center; border-color: red;
+}

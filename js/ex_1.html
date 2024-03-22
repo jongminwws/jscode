@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>숫자 마추기 게임</h1>
+    <p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다</p>
+    <label>숫자 : </label><input type="text" id="sa"> <button onclick="sub()">확인</button> <br> <!--함수호출--> 
+    <label>추측횟수 : </label> <input type="text" id="sz"> <br>
+    <label>힌트 : </label> <input type="text" id="hint">
+    <script>
+        /*사용자가 답을 제시하면 프로그램은 자신이 저장한 정수와 비교하여 제시돤
+        정수가 더 높은지 낮은지 만 알려준다
+        정수의 범위를 1~100 까지 한정한다.
+        게임이 끝나면 몇번만에 맞추었는지도 함께 출력한다, */
+        let count = 1; //전역변수 지역변수가 되면 함수가 끝날때마다 카운터가 초기화 됨 그래서 0에서 올라가지 않는다.
+        function sub() { // 함수 선언
+        let user = parseInt(document.getElementById("sa").value) // 사용자 id sa를 선택 답 (값 : value)를 제시.
+        const com = 55; // 프로그램은 자신이 저장한 정수 임의의 숫자, 정답이니깐 변하지않는 값 상수로 지정
+        document.getElementById("sz").value = count++; //버튼을 누를 때 마다 카운터가 1씩 올라간다
+        /* 프로그램 자신이 저장한 정수와 사용자가 답을 제시한 숫자보다 크면
+        더 큰숫자를 입력하세요 출력 
+
+        컴퓨터 숫자가 작으면 
+        더 낮은 숫자를 입력하세요 출력
+
+        숫자가 같으면 정답입니다 출력 */
+
+        switch(true) {
+            case user > com : 
+            document.getElementById("hint").value = "더 작은 값 입력"
+            break;
+            case user < com :
+                document.getElementById("hint").value = "더 큰 값 입력"
+                break;
+                case user == com :
+                    document.getElementById("hint").value = "정답임"
+        }
+        }
+    </script>
+</body>
+</html>

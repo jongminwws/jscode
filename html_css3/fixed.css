@@ -1,0 +1,13 @@
+p {
+    background-color: aqua;
+    width: 100px;
+    height: 60px;
+
+}
+
+#two {
+    background-color: yellow;
+    position: fixed;
+    top: 0px;
+    right: 10px;
+}

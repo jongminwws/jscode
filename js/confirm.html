@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sub()">버튼을 눌러주세요</button>  <!--언제 이걸 실행할건지 정해주는게 이벤트 (onclik) !-->
+    <p id="test"></p>
+    <script>
+        function sub() { //함수
+            const name = prompt("이름을 입력하세요") ;
+            document.getElementById("test").innerHTML = "welcome " + name
+        }
+    </script>
+</body>
+</html>

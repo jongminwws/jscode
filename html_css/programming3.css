@@ -1,0 +1,14 @@
+#ds {
+    border-style: solid; border-color: red; font-size: large; text-align: center;
+    background-color:  green; font-family: 굴림체; margin: 20px;
+}
+#sz {
+    border-style: solid; border-color: red; font-size: large; text-align: center;
+    background-color:  rgb(123, 40, 139); font-family: 굴림체; margin: 20px;
+}
+#sc {
+    border-style: solid; border-color: red; font-size: large; text-align: center;
+    background-color:  greenyellow; font-family: 굴림체; margin: 20px; color: white;
+}
+
+#sz :hover{ text-shadow: 5px 5px 2px red ;}

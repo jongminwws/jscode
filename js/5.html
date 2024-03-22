@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="se"> <button onclick="sub()">누르셈</button>
+    <p id="sw"></p>
+    <script>
+        function sub() {
+            let x = document.getElementById("se").value;
+            let y = "";
+            let i=1;
+            while (i<=9) {
+                y += (x*i) + "<br>"
+                i++;
+            }
+            document.getElementById("sw").innerHTML = y;
+        }
+    </script>
+</body>
+</html>
+

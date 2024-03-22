@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function printarray(a) { // a는 매게변수
+            document.write("[");
+            for (let i = 0; i < a.length;i++) // a의 길이 배열에 길이 만큼 반복한다
+            document.write(a[i] + " ");
+        document.write("] <br>");
+        }
+
+        let myarray1 = new Array();
+            myarray1[0] = "apple";
+            myarray1[1] = "banana";
+            myarray1[2] = "orange";
+
+        let myarray2 = new Array("apple","banana","orange");
+        let myarray3 = ["apple","banana","orange"];
+
+        printarray(myarray1) //인수를 a라는 변수에 저장 그러면 a가 array1이 된다
+        printarray(myarray2)
+        printarray(myarray3)
+    </script>
+</body>
+</html>

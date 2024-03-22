@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="test"></h1>
+    <script>
+        let mycar = {
+            model : "520d",
+            speed : 60,
+            color : "red",
+            break : function() {this.speed -= 10;},
+            accel : function() {this.speed += 10;} 
+        }
+
+        mycar.color = "yellow";
+        mycar.break();
+
+        let dog = new Object();
+        dog.name = "merry";
+        dog.age = 6;
+        dog.weight = 20;
+
+        document.getElementById("test").innerHTML = dog.name + "은" + dog.age + "살 입니다"
+    </script>
+</body>
+</html>

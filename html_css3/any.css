@@ -1,0 +1,20 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: 1s myanim; /* 에니메이션 지속시간 과 키프레임 규칙 이름 */
+    animation-iteration-count: 5; /* 애니메이션 반복횟수 */
+}
+
+@keyframes myanim {
+    0% {background-color: red; left: 0px; top: 0px; }
+
+    25% {background-color: red; left: 100px; top: 100px;}
+
+    50% {background-color: yellow; left: 200px; top: 200px;}
+
+    75% {background-color: blue; left: 300px; top: 300px;}
+
+    100% {background-color: blue; left: 400px; top: 400px;}
+}

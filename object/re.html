@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 소개</title>
+    <link type="text/css" rel="stylesheet" href="re.css">
+</head>
+
+<body>
+    <div id="se">
+        <h1 id="name"></h1>
+        <img src="img/ss.jpg" alt="지바겐" width="300" height="300">
+        <img src="img/11.jpg" alt="지바겐" width="300" height="300">
+        <img src="img/search.pstatic.jpg" alt="지바겐" width="300" height="300">
+        <p id="age"></p>
+        <p id="color"></p>
+        <p><a href="http://127.0.0.1:5500/%EA%B0%9D%EC%B2%B4/re1.html" target="_blank">내부 사진 보러가기</a></p>
+        <p id="gas"></p>
+        <button id="citygas">시내주행</button>
+        <button id="highway">고속도로</button> <br>
+        <p>연비 버튼 클릭하면 초기화 눌러주세요</p>
+        <button id="reset">초기화</button>
+        <p><a href="http://127.0.0.1:5500/%EA%B0%9D%EC%B2%B4/mo.html" target="_blank">오토바이 보러가기</a></p>
+    </div>
+
+    <script>
+        function Car(model, age, color, gas) {
+            this.model = model;
+            this.age = age;
+            this.color = color;
+            this.gas = gas;
+            this.city = function(){
+                this.gas -= 2.3;
+                updateGasDisplay();
+            }
+            this.highway = function() {
+                this.gas += 1.6;
+                updateGasDisplay();
+            }
+        }
+        let myCar = new Car("메르세데스-벤츠 AMG G클래스", 2024, "white", 5.3);
+        
+        function updateGasDisplay() {
+        document.getElementById("gas").innerHTML = "현재 연비는 " + myCar.gas.toFixed(1) + "입니다";
+        }
+        document.getElementById("name").innerHTML = "저의 자동차는 " +myCar.model+"입니다";
+        document.getElementById("age").innerHTML = " 연식은 "+myCar.age+"년형 완전 신형";
+        document.getElementById("color").innerHTML="색상도" +myCar.color+"라서 이쁨";
+        updateGasDisplay();
+        
+        document.getElementById("citygas").onclick = function() {
+            myCar.city();
+        };
+        
+        document.getElementById("highway").onclick = function() {
+            myCar.highway();
+        };
+        
+        document.getElementById("reset").addEventListener("click", function() {
+            myCar.gas = 5.6;
+            updateGasDisplay();
+        })
+    </script>
+</body>
+
+</html>

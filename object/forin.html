@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myCar = {make : "BMW", model : "520d", year : "2023"}; // 자동차를 나타내는 객체와 속성
+        let text = " ";
+
+        for (let x in myCar) { // 객체의 모든 속성에 대하여 반복한다,
+            text +=myCar[x] + " ";
+        }
+        document.write(text)
+    </script>
+</body>
+</html>

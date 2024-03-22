@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>프롬프트 연습</h1>
+    <input id="te" placeholder="이름입력칸"> 
+    <button onclick="sub()">누르셈</button>
+    <p id="se"></p>
+    <script>
+        function sub() {
+            let x= document.getElementById("te").value;
+            document.getElementById("se").innerHTML = "welcome " + x;
+        }
+    </script>
+</body>
+</html>

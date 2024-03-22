@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2023년 7월 10일을 나타내는 Date 객체 생성 월은 0부터 시작하므로 7월을 표현하기 위해 6을 사용
+        let today = new Date(); //현재 날짜 , 현재 시간이 출력
+
+        //년월일 중에서 월만 추출 mo 변수에 저장
+        let mo = today.getMonth()+1;
+        //년월일 중에서 일만 추출 변수에 저장
+        let se = today.getDate();
+        document.write(mo +"월" +se+"일")
+    </script>
+</body>
+</html>

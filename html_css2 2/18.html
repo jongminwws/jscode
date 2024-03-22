@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border-collapse</title>
+    <style>
+        #se {
+            border-collapse: separate;
+        }
+        #sw {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <p>separate : 각 셀마다 경계선을 따로 그림</p>
+    <table border="1" id="se">
+        <tr>
+            <td>
+                북한산
+            </td>
+            <td>
+                도봉산
+            </td>
+            <td>
+                수락산
+            </td>
+            <td>
+                관악산
+            </td>
+            <td>
+                청계산
+            </td>
+        </tr>
+        <tr>
+            <td>
+                837m
+            </td>
+            <td>
+                740m
+            </td>
+            <td>
+                640m
+            </td>
+            <td>
+                692m
+            </td>
+            <td>
+                618m
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        collapse : 셀의 경계선을 하나로 합침
+    </p>
+    <table border="1" id="sw">
+        <tr>
+            <td>
+                북한산
+            </td>
+            <td>
+                도봉산
+            </td>
+            <td>
+                수락산
+            </td>
+            <td>
+                관악산
+            </td>
+            <td>
+                청계산
+            </td>
+        </tr>
+        <tr>
+            <td>
+                837m
+            </td>
+            <td>
+                740m
+            </td>
+            <td>
+                640m
+            </td>
+            <td>
+                692m
+            </td>
+            <td>
+                618m
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

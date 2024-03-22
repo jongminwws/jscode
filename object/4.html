@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="short icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    첫번째 학생 점수<input class="se"> <br>
+    두번째 학생 점수<input class="se"> <br>
+    세번째 학생 점수<input class="se"> <br>
+    네번째 학생 점수<input class="se"> <br>
+    다섯번째 학생 점수<input class="se"> <br>
+    <button onclick="sub()">덧하기</button>
+    <button onclick="suc()">평균 구하기</button>
+    <p id="text"></p>
+    <p id="text1"></p>
+    <script>
+        function sub() {
+            let sc = document.getElementsByClassName("se")
+            let total = 0;
+            for (i=0;i<sc.length;i++){
+                total +=parseInt(sc[i].value)
+            }
+            return total;
+        }
+        document.getElementById("text").innerHTML = "총합은 : " + sub() + " 입니다"
+        
+        function suc () {
+            let sw = document.getElementsByClassName("se")
+            let to = 0;
+            for( i =0; i<sw.length;i++){
+                to +=parseInt(sw[i].value) / sw.length
+            }
+            return to;
+        }
+        document.getElementById("text1").innerHTML = "평균은 : " + suc() + " 입니다"
+    </script>
+</body>
+</html>
