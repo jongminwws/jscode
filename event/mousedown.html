@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmousedown="down(this)" onmouseup="up(this)">눌러보셈</button>
+    <script>
+        function down(button) {
+            button.style.color = "red" // 마우스 버튼이 눌러지면 버튼의 색상이 빨간색으로 된다.
+        }
+        function up(button) {
+            button.style.color = "blue" // 마우스 버튼이 떼지면 버튼의 색상이 파란색으로 변경된다
+        }
+    </script>
+</body>
+</html>

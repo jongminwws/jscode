@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="target">
+    <form method="post">
+        <input type="radio" name="c1" value="c1" onclick="co('blue')">파란색
+        <input type="radio" name="c1" value="c2" onclick="co('green')">초록색
+        <script>
+            function co(color) {
+                document.getElementById("target").style.backgroundColor = color;
+            }
+        </script>
+    </form>
+    
+</body>
+</html>

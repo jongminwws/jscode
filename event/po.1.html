@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ti">오후 1:00:19</p>
+    <!-- 익명 함수 사용 -->
+    <button id="se">시계 멈추기</button>
+    <!-- 인라인 방식 사용 -->
+    <button onclick="sub()">시계 멈추기</button>
+    <script>
+        let my =setInterval(timer,1000)
+        function timer() {
+        let today = new Date();
+        document.getElementById("ti").innerHTML = today.toLocaleTimeString();
+    }
+    // 익명함수 이용해서 이벤트리스너 사용
+    se.addEventListener("click",function(){
+        clearInterval(my)
+    })
+    //인라인 방식으로
+    function sub() {
+        clearInterval(my);
+    }
+    </script>
+</body>
+</html>
