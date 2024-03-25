@@ -7,12 +7,19 @@
 </head>
 <body>
     <div>
+        <p id="ss">하이</p>
         <button onclick="ss()">항목추가</button>
+        <button id="eve">add함수로 이벤트</button>
     </div>
     <script>
         function ss() {
             alert ("aaaa")
         }
+        let a = document.getElementById("eve");
+        function sa() {
+            document.getElementById("ss").style.color="blue";
+        }
+        addEventListener("click",sa);
     </script>
 </body>
 </html>
