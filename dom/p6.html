@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/11.jpg" id="se"> <br>
+    <button  onclick="sub('left')">왼쪽 이동</button>
+    <button  onclick="sub('right')">오른쪽 이동</button>
+    <script>
+        /* let left =0;
+        let right=0;
+        //왼쪽이동
+        function suc() {
+            left -=50;
+            document.getElementById("se").style.left=left+"px";
+        }
+        // 오른쪽 이동
+        function sub() {
+            right-=50;
+            document.getElementById("se").style.right=right+"px"
+        } */
+        let left =0;
+        function sub(move) {
+            if(move=='left') { // 매개변수 move에 인수값이 left이면
+                left -=30;
+                document.getElementById("se").style.left=left+ "px";
+            }else if(move == 'right')
+            left +=30;
+            document.getElementById("se").style.left=left + "px"
+        }
+
+    </script>
+</body>
+</html>

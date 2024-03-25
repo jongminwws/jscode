@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="se" src="img/11.jpg" onclick="sub()">
+    <p>스위치를 클릭하여 보세여</p>
+    <script>
+        function sub() {
+            document.getElementById("se");
+            if(se.src.match("img/11.jpg")){
+                se.src = "img/22.jpg"
+            }else {
+                se.src = "img/11.jpg"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ranimg()" id="sw">랜덤이미지</button>
+    <div id="se"></div>
+    <script>
+        let ear = ["img/11.jpg","img/22.jpg","img/33.jpg"]
+        function ranimg() {
+            let img = document.createElement("img");
+            document.getElementById("se").appendChild(img)
+            let ra = Math.floor((Math.random()*3))
+            document.getElementsByTagName("img")[0].src=ear[ra]
+        }
+    </script>
+</body>
+</html>
