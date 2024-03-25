@@ -8,18 +8,34 @@
 <body>
     <div>
         <p id="ss">하이</p>
+        <!--인라인 이벤트리스터-->
         <button onclick="ss()">항목추가</button>
+        <!--addEventListener 함수를 이용해서 이벤트 리스너-->
         <button id="eve">add함수로 이벤트</button>
+        <!-- 익명 함수를 이용한 이벤트 리스너-->
+        <button id="an">add함수로 이벤트</button>
     </div>
     <script>
+        //인라인 이벤트리스너
         function ss() {
             alert ("aaaa")
         }
+        // addEventListener 함수를 이용해서 이벤트 리스너
         let a = document.getElementById("eve");
+        let an = document.getElementById("an");
         function sa() { 
             document.getElementById("ss").style.color="blue";
         }
-        addEventListener("click",sa);
+        function ba() {
+            document.getElementById("ss").style.backgroundColor = "red"
+        }
+        a.addEventListener("click",sa);
+        a.addEventListener("click",an);
+        // 익명함수를 이용한 이벤트 리스너
+        an.addEventListener("click",function(){
+            document.getElementById("ss").style.color = "blue";
+            document.getElementById("ss").style.backgroundColor ="red";
+        })
 
     </script>
 </body>
