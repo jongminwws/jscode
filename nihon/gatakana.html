@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <title>히라가나 맞추기</title>
+    <title>가타카나 맞추기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,7 +21,7 @@
             text-align: center;
         }
         #buttonContainer {
-            margin-top: 20px; /* 버튼 컨테이너의 위쪽 마진 추가 */
+            margin-top: 20px; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -77,14 +77,14 @@
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()" id="sw">랜덤 히라가나</button>
+            <button onclick="random()" id="sw">랜덤 가타카나</button>
             <button onclick="check()" id="checkBtn">정답 확인</button>
             <button onclick="show()" id="sz">정답보기</button>
         </div>
         
     </div>
     <script>
-        let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","ガ","ギ","グ","ゲ","ゴ","サ","シ","ス","セ","ソ","ザ","ジ","ズ","ゼ","ゾ","タ","チ","ツ","テ","ト","ダ","ヂ","ヅ","デ","ド","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン",ヴ];
+        let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","ガ","ギ","グ","ゲ","ゴ","サ","シ","ス","セ","ソ","ザ","ジ","ズ","ゼ","ゾ","タ","チ","ツ","テ","ト","ダ","ヂ","ヅ","デ","ド","ナ","ニ","ヌ","ネ","のノ","ハ","ヒ","フ","ヘ","ホ","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン","ヴ"];
         let hii;
         
         function random() {
@@ -190,7 +190,7 @@
                     return "누"; 
                 case "ネ":
                     return "네"; 
-                case "ノ":
+                case "のノ":
                     return "노"; 
                 case "ハ":
                     return "하"; 
