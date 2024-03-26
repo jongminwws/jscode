@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ta {
+            border: 5px solid black;
+            width: 50px;
+            border-radius: 50px;
+            padding: 10px;
+        }
+        #ta > div{
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+        #green {
+            background-color: green;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+        #red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="ta">
+        <div id="green"></div>
+        <div id="yellow"></div>
+        <div id="red"></div>
+    </div>
+
+    <script>
+        function tr() {
+            let green = document.getElementById("green");
+            let yellow = document.getElementById("yellow");
+            let red = document.getElementById("red");
+
+            setTimeout(function () {
+                green.style.backgroundColor = "green";
+                yellow.style.backgroundColor = "white";
+                red.style.backgroundColor = "white";
+            }, 5000);
+
+            setTimeout(function(){
+                green.style.backgroundColor = "white";
+                yellow.style.backgroundColor = "yellow";
+                red.style.backgroundColor = "white";
+            }, 7000);
+
+            setTimeout(function(){
+                green.style.backgroundColor = "white";
+                yellow.style.backgroundColor = "white";
+                red.style.backgroundColor = "red";
+            }, 12000);
+        }   //tr 부분 끝나는 부분
+        setInterval(function() {
+            tr();
+        },12000)
+        tr();
+    </script>
+</body>
+</html>
