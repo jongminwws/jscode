@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <title>히라가나 맞추기</title>
+    <title>가타카나 맞추기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,14 +77,14 @@
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()" id="sw">랜덤 히라가나</button>
+            <button onclick="random()" id="sw">랜덤 가타카나</button>
             <button onclick="check()" id="checkBtn">정답 확인</button>
             <button onclick="show()" id="sz">정답보기</button>
         </div>
         
     </div>
     <script>
-        let ear = ["あ","い","う","え","お","か","き","く","け","こ","が","ぎ","ぐ","げ","ご","さ","し","す","せ","そ","ざ","じ","ず","ぜ","ぞ","た","ち","つ","て","と","だ","ぢ","づ","で","ど","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+        let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
         let hii;
         
         function random() {
@@ -132,16 +132,6 @@
                     return "케";
                 case "こ":
                     return "코";
-                case "が":
-                    return "가";
-                case "ぎ":
-                    return "기";
-                case "ぐ":
-                    return "구";
-                case "げ":
-                    return "게";
-                case "ご":
-                    return "고";
                 case "さ":
                     return "사";
                 case "し":
@@ -151,17 +141,7 @@
                 case "せ":
                     return "세";
                 case "そ":
-                    return "소";
-                case "ざ":
-                    return "자";
-                case "じ":
-                    return "지";
-                case "ず":
-                    return "즈";
-                case "ぜ":
-                    return "제";
-                case "ぞ":
-                    return "조";
+                    return "소"; 
                 case "た":
                     return "타"; 
                 case "ち":
@@ -171,17 +151,7 @@
                 case "て":
                     return "테"; 
                 case "と":
-                    return "토";
-                case "だ":
-                    return "다";
-                case "ぢ":
-                    return "디";
-                case "づ":
-                    return "드";
-                case "で":
-                    return "데";
-                case "ど":
-                    return "도";
+                    return "토"; 
                 case "な":
                     return "나"; 
                 case "に":
@@ -201,27 +171,7 @@
                 case "へ":
                     return "헤"; 
                 case "ほ":
-                    return "호";
-                case "ば":
-                    return "바"; 
-                case "び":
-                    return "비";
-                case "ぶ":
-                    return "부";
-                case "べ":
-                    return "베";
-                case "ぼ":
-                    return "보";
-                case "ぱ":
-                    return "파";
-                case "ぴ":
-                    return "피";
-                case "ぷ":
-                    return "푸";
-                case "ぺ":
-                    return "페";
-                case "ぽ":
-                    return "포";
+                    return "호"; 
                 case "ま":
                     return "마"; 
                 case "み":
