@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>회원 신청서</h1>
+    <table>
+        <tr>
+            <td>이름 *</td>
+            <td><input type="text" id="name"></td>
+            <td><label id="na"></label></td>
+        </tr>
+        <tr>
+            <td>성별 *</td>
+            <td>
+                <input type="radio" name="gender" value="male">남성
+                <input type="radio" name="gender" value="female">여성
+                <td><label id="confrim"></label></td>
+                <td><label id="ms"></label></td>
+            </td>
+        </tr>
+        <tr>
+            <td>휴대폰 번호 *</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>이메일 *</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>패스워드 *</td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td>패스워드 검증 * </td>
+            <td> <input type="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button>제출</button><button>지우기</button> </td>
+        </tr>
+    </table>
+
+    <script>
+        let name= document.getElementById("name");
+        let na = document.getElementById("na")
+
+        let nareg = /^[가-힣]{2,4}$/; // 2자부터 4자까지 한글만
+        name.addEventListener("blur",function() { // 커서가 다른곳으로 이동했을 때 아이디를 입력하라고 
+            if(name.value.match(nareg)){ // match 가 있으면 종민이라는 이름이 들어가 있기만 해도 true가 나온다
+                na.innerHTML = "아이디 확인~"
+                na.style.color = "blue"
+            }else {
+                na.innerHTML = "아이디 안됨"
+                na.style.color = "red"
+            }
+        })
+        let gender = document.getElementsByName("gender");
+        let confirm = document.getElementById("confrim");
+        let ms = document.getElementById("ms");
+        confirm.addEventListener("click",function(){
+            for(i=0;i<gender.length;i++){
+                if(gender[i].checked) {
+                    ns.innerHTML = "성별선택함"
+                } else {
+                    ns.innerHTML = "성별 선택하세요"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

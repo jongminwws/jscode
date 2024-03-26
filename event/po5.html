@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> 숫자를 입력하세여</p>
+    <input type="text" id="text">
+    <button onclick="sub()" id="se">숫자여부판단 버튼</button>
+    <script>
+        let text= document.getElementById("text");
+        
+        let btn = document.getElementById("se")
+
+        function sub() {
+            let x=text.value;
+            console.log(isNaN(x))
+            if(isNaN(x)) //true 이면 문자 
+            alert("숫자가 아닙니다")
+        }
+    </script>
+</body>
+</html>

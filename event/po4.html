@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #car1, car2 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        #car2 {
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/11.jpg" id="car1" onmousedown="move()">
+    <img src="img/22.jpg" id="car2" onmousedown="move()">
+    <script>
+        // 마우스로 이미지를 움직일 때마다 -10px 씩 움직인다
+        let car1 = document.getElementById("car1")
+        let car2 = document.getElementById("car2")
+        let moving = false;
+        car1.addEventListener("mouseover",ins,false)
+        car2.addEventListener("mouseover",ins,false)
+        function move(e) {
+            let newX = e.clientX -10;
+            let newY = e.clientY -10;
+            Image.style.left =newX + "px";
+            Image.style.top = newY + "px";
+        }
+
+
+        function ins(e) {
+            if(moving) {
+                document.removeEventListener("mousemove",move)
+                moving = !moving;
+                return;
+            }
+            moving = !moving;
+            Image=this;
+            document.addEventListener("mousemove",move,false);
+        }
+    </script>
+</body>
+</html>
