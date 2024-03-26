@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="#">
+    <title>히라가나 맞추기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,10 +14,18 @@
             flex-direction: column; 
             align-items: center;
             justify-content: center;
-            background-color: #f0f0f0;
+            background-color: lightgray;
+            height: 100vh;
         }
         #container {
             text-align: center;
+        }
+        #buttonContainer {
+            margin-top: 20px; /* 버튼 컨테이너의 위쪽 마진 추가 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
         }
         button {
             padding: 10px 20px;
@@ -25,7 +34,11 @@
             color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer; 
+            margin-top: 10px;
+            width: 300px;
         }
+        
         #se {
             margin-top: 20px;
             font-size: 24px;
@@ -33,24 +46,166 @@
             border: 2px solid blue;
             padding: 20px;
             border-radius: 10px;
-            background-color: #fff;
+            background-color: white;
         }
+        #answer {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid blue;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #sa {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid blue;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+        
     </style>
 </head>
 <body>
     <div id="container">
+        <img src="image/nihon.jpg" width="200" height="200">
         <div id="se"></div>
-        <button onclick="ranString()" id="sw">랜덤 히라가나</button>
+        <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
+        <div id="answer"></div>
+        <div id="buttonContainer">
+            <button onclick="random()" id="sw">랜덤 히라가나</button>
+            <button onclick="check()" id="checkBtn">정답 확인</button>
+            <button onclick="show()" id="sz">정답보기</button>
+        </div>
+        
     </div>
     <script>
-        let ear = ["あ","い","う","え","お","か","き","く","け","こ","が","ぎ","ぐ","げ","ご","さ","し","す","せ","そ","ざ","じ","ず","ぜ","ぞ","ち","つ","て","と","だ","ぢ","づ","で","ど","な","に","ぬ","ね","の","は","ひ","ふ","ふ","ほ","ば","び","ぶ","べ","ぼ","ま","み","む","め","も","や","や","よ","ら","り","る","れ","ろ","わ","を"];
+        let ear = ["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+        let hii;
         
-        function ranString() {
+        function random() {
             document.getElementById("se").innerHTML = " ";
             let hi = Math.floor(Math.random() * ear.length);
-            let hii = ear[hi];
+            hii = ear[hi];
             document.getElementById("se").innerHTML = hii;
-        } //
+            document.getElementById("answer").innerText = "";
+            document.getElementById("sa").value = "";
+        } 
+        
+        function check() {
+            let us = document.getElementById("sa").value; 
+            let ka = kor(hii); 
+            if (us == ka) { 
+                alert("정답!!!");
+            } else {
+                alert("땡!");
+            }
+        }
+        
+        function show() {
+            document.getElementById("answer").innerText = kor(hii);
+        }
+        
+        function kor(e) {
+            switch (e) {
+                case "あ":
+                    return "아";
+                case "い":
+                    return "이";
+                case "う":
+                    return "우";
+                case "え":
+                    return "에";
+                case "お":
+                    return "오";
+                case "か":
+                    return "카";
+                case "き":
+                    return "키";
+                case "く":
+                    return "쿠";
+                case "け":
+                    return "케";
+                case "こ":
+                    return "코";
+                case "さ":
+                    return "사";
+                case "し":
+                    return "시";
+                case "す":
+                    return "스";
+                case "せ":
+                    return "세";
+                case "そ":
+                    return "소"; 
+                case "た":
+                    return "타"; 
+                case "ち":
+                    return "치"; 
+                case "つ":
+                    return "츠"; 
+                case "て":
+                    return "테"; 
+                case "と":
+                    return "토"; 
+                case "な":
+                    return "나"; 
+                case "に":
+                    return "니"; 
+                case "ぬ":
+                    return "누"; 
+                case "ね":
+                    return "네"; 
+                case "の":
+                    return "노"; 
+                case "は":
+                    return "하"; 
+                case "ひ":
+                    return "히"; 
+                case "ふ":
+                    return "후"; 
+                case "へ":
+                    return "헤"; 
+                case "ほ":
+                    return "호"; 
+                case "ま":
+                    return "마"; 
+                case "み":
+                    return "미";
+                case "む":
+                    return "무";
+                case "め":
+                    return "메";
+                case "も":
+                    return "모";
+                case "や":
+                    return "야";
+                case "ゆ":
+                    return "유";
+                case "よ":
+                    return "요";
+                case "ら":
+                    return "라";
+                case "り":
+                    return "리";
+                case "る":
+                    return "루";
+                case "れ":
+                    return "레";
+                case "ろ":
+                    return "로";
+                case "わ":
+                    return "와";
+                case "を":
+                    return "오";
+                case "ん":
+                    return "응";
+            }
+        }
     </script>
 </body>
 </html>
