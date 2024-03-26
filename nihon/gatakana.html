@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <title>가타카나 맞추기</title>
+    <title>히라가나 맞추기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,14 +77,14 @@
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()" id="sw">랜덤 가타카나</button>
+            <button onclick="random()" id="sw">랜덤 히라가나</button>
             <button onclick="check()" id="checkBtn">정답 확인</button>
             <button onclick="show()" id="sz">정답보기</button>
         </div>
         
     </div>
     <script>
-        let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","さ","し","す","せ","そ","た","ち","つ","て","と","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+        let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","ガ","ギ","グ","ゲ","ゴ","サ","シ","ス","セ","ソ","ザ","ジ","ズ","ゼ","ゾ","タ","チ","ツ","テ","ト","ダ","ヂ","ヅ","デ","ド","ナ","ニ","ヌ","ネ","ノ","ハ","ヒ","フ","ヘ","ホ","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン",ヴ];
         let hii;
         
         function random() {
@@ -112,98 +112,150 @@
         
         function kor(e) {
             switch (e) {
-                case "あ":
+                case "ア":
                     return "아";
-                case "い":
+                case "イ":
                     return "이";
-                case "う":
+                case "ウ":
                     return "우";
-                case "え":
+                case "エ":
                     return "에";
-                case "お":
+                case "オ":
                     return "오";
-                case "か":
+                case "カ":
                     return "카";
-                case "き":
+                case "キ":
                     return "키";
-                case "く":
+                case "ク":
                     return "쿠";
-                case "け":
+                case "ケ":
                     return "케";
-                case "こ":
+                case "コ":
                     return "코";
-                case "さ":
+                case "ガ":
+                    return "가";
+                case "ギ":
+                    return "기";
+                case "グ":
+                    return "구";
+                case "ゲ":
+                    return "게";
+                case "ゴ":
+                    return "고";
+                case "サ":
                     return "사";
-                case "し":
+                case "シ":
                     return "시";
-                case "す":
+                case "ス":
                     return "스";
-                case "せ":
+                case "セ":
                     return "세";
-                case "そ":
-                    return "소"; 
-                case "た":
+                case "ソ":
+                    return "소";
+                case "ザ":
+                    return "자";
+                case "ジ":
+                    return "지";
+                case "ズ":
+                    return "즈";
+                case "ゼ":
+                    return "제";
+                case "ゾ":
+                    return "조";
+                case "タ":
                     return "타"; 
-                case "ち":
+                case "チ":
                     return "치"; 
-                case "つ":
+                case "ツ":
                     return "츠"; 
-                case "て":
+                case "テ":
                     return "테"; 
-                case "と":
-                    return "토"; 
-                case "な":
+                case "ト":
+                    return "토";
+                case "ダ":
+                    return "다";
+                case "ヂ":
+                    return "디";
+                case "ヅ":
+                    return "드";
+                case "デ":
+                    return "데";
+                case "ナ":
+                    return "도";
+                case "ド":
                     return "나"; 
-                case "に":
+                case "ニ":
                     return "니"; 
-                case "ぬ":
+                case "ヌ":
                     return "누"; 
-                case "ね":
+                case "ネ":
                     return "네"; 
-                case "の":
+                case "ノ":
                     return "노"; 
-                case "は":
+                case "ハ":
                     return "하"; 
-                case "ひ":
+                case "ヒ":
                     return "히"; 
-                case "ふ":
+                case "フ":
                     return "후"; 
-                case "へ":
+                case "ヘ":
                     return "헤"; 
-                case "ほ":
-                    return "호"; 
-                case "ま":
+                case "ホ":
+                    return "호";
+                case "バ":
+                    return "바"; 
+                case "ビ":
+                    return "비";
+                case "ブ":
+                    return "부";
+                case "ベ":
+                    return "베";
+                case "ボ":
+                    return "보";
+                case "パ":
+                    return "파";
+                case "ピ":
+                    return "피";
+                case "プ":
+                    return "푸";
+                case "ペ":
+                    return "페";
+                case "ポ":
+                    return "포";
+                case "マ":
                     return "마"; 
-                case "み":
+                case "ミ":
                     return "미";
-                case "む":
+                case "ム":
                     return "무";
-                case "め":
+                case "メ":
                     return "메";
-                case "も":
+                case "モ":
                     return "모";
-                case "や":
+                case "ヤ":
                     return "야";
-                case "ゆ":
+                case "ユ":
                     return "유";
-                case "よ":
+                case "ヨ":
                     return "요";
-                case "ら":
+                case "ラ":
                     return "라";
-                case "り":
+                case "リ":
                     return "리";
-                case "る":
+                case "ル":
                     return "루";
-                case "れ":
+                case "レ":
                     return "레";
-                case "ろ":
+                case "ロ":
                     return "로";
-                case "わ":
+                case "ワ":
                     return "와";
-                case "を":
+                case "ヲ":
                     return "오";
-                case "ん":
+                case "ン":
                     return "응";
+                case "ヴ":
+                    return "브~";
             }
         }
     </script>
