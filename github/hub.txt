@@ -1,0 +1,29 @@
+- 새로운 폴더를 깃 허브에 올릴 때
+1. 깃 허브에 레포지터리 생성
+vsc에서 올릴 폴더를 열고
+f1 -> git clone -> 깃 허브 복제 -> 생성한 레포지터리 선택 -> 소스제어에서 변경한 사항에 있는 파일들을 스테이징된 폴더에 올림
+
+터미널(controll + ~)
+git bash 설정!!
+깃 허브에서 레포지터리 생성 후 전체 복사후
+echo "# " >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin 
+git push -u origin main
+붙여 넣기. 
+연동 끝
+
+연동 후 파일 수정 후 깃허브에 올릴 때
+1. 소스제어에서 스테이징 된 변경사항으로 올림
+2. vsc gitbash 터미널 열기.
+- git init
+- git add .
+- git commit -m "메시지"
+- git push -u origin main 해서 올리기.
+
+다른 컴퓨터에서 이어서 작업할 때
+1. 이어서 작업할 폴더를 VSC에서 열기
+2. VSC에서 이어서 할 파일을 깃 허브와 연동 후에 gitbash 터미널에서 "git pull origin main" 입력
