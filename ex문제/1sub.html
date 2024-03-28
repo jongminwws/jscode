@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="se1">
+    <input id="se2">
+    <input id="se3">
+    <input id="se4">
+    <input id="se5">
+    <button onclick="sua(parseInt(document.getElementById('se1').value), parseInt(document.getElementById('se2').value), parseInt(document.getElementById('se3').value), parseInt(document.getElementById('se4').value), parseInt(document.getElementById('se5').value))">+</button>
+    <button onclick="sub(parseInt(document.getElementById('se1').value), parseInt(document.getElementById('se2').value), parseInt(document.getElementById('se3').value), parseInt(document.getElementById('se4').value), parseInt(document.getElementById('se5').value))">-</button>
+    <button onclick="suc(parseInt(document.getElementById('se1').value), parseInt(document.getElementById('se2').value), parseInt(document.getElementById('se3').value), parseInt(document.getElementById('se4').value), parseInt(document.getElementById('se5').value))">*</button>
+    <button onclick="sua(parseInt(document.getElementById('se1').value), parseInt(document.getElementById('se2').value), parseInt(document.getElementById('se3').value), parseInt(document.getElementById('se4').value), parseInt(document.getElementById('se5').value))">/</button>
+    <script>
+        function sua(x,y,z,c,v) {
+            let sum = x+y+z+c+v;
+            alert(sum);
+        }
+        function sub(x,y,z,c,v) {
+            let sum1 = x-y-z-c-v;
+            alert(sum1);
+        }
+        function suc(x,y,z,c,v) {
+            let sum2 = x*y*z*c*v;
+            alert(sum2);
+        }
+        function sud(x,y,z,c,v) {
+            let sum3 = x/y/z/c/v;
+            alert(sum3);
+        }
+    </script>
+</body>
+</html>
