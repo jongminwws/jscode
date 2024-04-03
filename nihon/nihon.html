@@ -126,9 +126,9 @@
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()" id="sw">랜덤 히라가나</button>
-            <button onclick="check()" id="checkBtn">정답 확인</button>
-            <button onclick="show()" id="sz">정답보기</button>
+            <button onclick="random()">랜덤 히라가나</button>
+            <button onclick="check()">정답 확인</button>
+            <button onclick="show()" onkeypress="checkOnSpace(event)">정답보기</button>
             <button onclick="window.open('http://127.0.0.1:5500/nihon/gatakana.html','_blank')">랜덤 가타카나 가기</button>
         </div>
         
@@ -169,6 +169,7 @@
             let ka = kor(hii); 
             if (us == ka) { 
                 alert("정답!!!");
+                updateScore(1);
                 clearInterval(timerInterval); // 타이머 정지 기능
             } else {
                 alert("땡!");
@@ -180,7 +181,12 @@
             document.getElementById("sa").disabled = true;
             clearInterval(timerInterval);  //타이머 정지 기능
         }
-        
+    
+        function checkOnSpace(event) {
+            if (event.keyCode === 32) { // 스페이스바를 눌렀을 때
+                show(); // 정답 표시 함수 호출
+            }
+        }
         function kor(e) {
             switch (e) {
                 case "あ":

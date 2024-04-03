@@ -173,6 +173,7 @@
                 alert("정답!!!");
                 updateScore(1);
                 clearInterval(timerInterval); // 타이머 정지 기능
+                document.getElementById("answer").innerText = "정답: " + ka;
             } else {
                 alert("땡!");
             }
