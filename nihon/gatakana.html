@@ -5,88 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
     <title>가타카나 맞추기</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: center;
-            background-color: lightgray;
-            height: 100vh;
-        }
-        #container {
-            text-align: center;
-        }
-        #buttonContainer {
-            margin-top: 20px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column; 
+                align-items: center;
+                justify-content: center;
+                background-color: #f2f2f2;
+                height: 100vh;
+            }
+            #container {
+                text-align: center;
+                background-color: #fff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            #score {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #666;
+            }
+            #scoreValue {
+                font-weight: bold;
+                color: #333;
+            }
+            #scoreContainer, #timers {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
             
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: blue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer; 
-            margin-top: 10px;
-            width: 300px;
-        }
-        
-        #se {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border: 2px solid blue;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-        }
-        #answer {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border: 2px solid blue;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-        }
-        #sa {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            border: 2px solid blue;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: white;
-            text-align: center;
-        }
+            #score, #timer {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            
+            #scoreValue, #timerValue {
+                color: black;
+            }
+            #se {
+                margin-top: 20px;
+                font-size: 32px;
+                font-weight: bold;
+                border: 2px solid #3498db;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                width: 200px;
+                margin: 0 auto;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            #answer {
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+            }
+            #sa {
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                border: 2px solid #3498db;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                text-align: center;
+                width: 80%;
+                max-width: 300px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: border-color 0.3s ease;
+            }
+            #sa:focus {
+                border-color: #2ecc71;
+                outline: none;
+            }
+            #buttonContainer {
+                margin-top: 20px; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer; 
+                margin-top: 10px;
+                width: 80%;
+                max-width: 300px;
+                transition: background-color 0.3s ease;
+            }
+            button:hover {
+                background-color: #2980b9;
+            }
+            img {
+                height: 350px;
+                width: 350px;
+            }
         
     </style>
 </head>
 <body>
     <div id="container">
-        <img src="image/nihon.jpg" width="200" height="200">
+        <div id="scoreContainer">
+            <div id="score">맞힌 갯수: <span id="scoreValue">0</span></div>
+        </div>
+        <div id="timers">
+            <div id="timer">남은 시간: <span id="timerValue">30</span>초</div>
+        </div>
+        <img src="image/ss.jpg" width="200" height="200">
         <div id="se"></div>
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()" id="sw">랜덤 가타카나</button>
-            <button onclick="check()" id="checkBtn">정답 확인</button>
-            <button onclick="show()" id="sz">정답보기</button>
+            <button onclick="random()">랜덤 가타카나</button>
+            <button onclick="check()">정답 확인</button>
+            <button onclick="show()">정답보기</button>
+            <button onclick="window.open('http://127.0.0.1:5500/nihon/nihon.html','_blank')">랜덤 히라가나 가기</button>
         </div>
         
     </div>
     <script>
         let ear = ["ア","イ","ウ","エ","オ","カ","キ","ク","ケ","コ","ガ","ギ","グ","ゲ","ゴ","サ","シ","ス","セ","ソ","ザ","ジ","ズ","ゼ","ゾ","タ","チ","ツ","テ","ト","ダ","ヂ","ヅ","デ","ド","ナ","ニ","ヌ","ネ","のノ","ハ","ヒ","フ","ヘ","ホ","バ","ビ","ブ","ベ","ボ","パ","ピ","プ","ペ","ポ","マ","ミ","ム","メ","モ","ヤ","ユ","ヨ","ラ","リ","ル","レ","ロ","ワ","ヲ","ン","ヴ"];
         let hii;
+        let score =0;
+        let timerValue = 30;
+        let timerInterval; 
         
+        function startTimer() {
+            timerInterval = setInterval(function() {
+                timerValue--;// 1초 감소
+                document.getElementById("timerValue").innerText = timerValue;
+                if (timerValue <= 0) {
+                    clearInterval(timerInterval); // 타이머 종료
+                    alert("시간 종료!");
+                }
+            }, 1000);  // 1초마다 실행
+        } 
+
         function random() {
             document.getElementById("se").innerHTML = " ";
             let hi = Math.floor(Math.random() * ear.length);
@@ -94,6 +158,12 @@
             document.getElementById("se").innerHTML = hii;
             document.getElementById("answer").innerText = "";
             document.getElementById("sa").value = "";
+            document.getElementById("sa").disabled = false;
+            clearInterval(timerInterval); // 이전 타이머 종료
+            timerValue = 30; // 타이머 초기화
+            document.getElementById("timerValue").innerText = timerValue; //타이머 값 초기화
+            startTimer(); // 타이머 시작
+            
         } 
         
         function check() {
@@ -101,6 +171,8 @@
             let ka = kor(hii); 
             if (us == ka) { 
                 alert("정답!!!");
+                updateScore(1);
+                clearInterval(timerInterval); // 타이머 정지 기능
             } else {
                 alert("땡!");
             }
@@ -108,6 +180,8 @@
         
         function show() {
             document.getElementById("answer").innerText = kor(hii);
+            document.getElementById("sa").disabled = true;
+            clearInterval(timerInterval);  //타이머 정지 기능
         }
         
         function kor(e) {
@@ -257,6 +331,10 @@
                 case "ヴ":
                     return "브~";
             }
+        }
+        function updateScore(point) {
+            score += point;
+            document.getElementById("scoreValue").innerHTML = score;
         }
     </script>
 </body>
