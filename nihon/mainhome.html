@@ -1,46 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>일본어 공부 홈페이지</title>
     <style>
-        #he {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            border: 2px solid #3498db;
-            padding: 5px;
-            border-radius: 10px;
-            background-color: #fff;
-            width: 150px;
-            margin: 0 auto;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
-        #ka {
-            margin-top: 20px;
+
+        #headname {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: lightcoral;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: center; /* 중앙 정렬 추가 */
+            margin-bottom: 20px;
+        }
+
+        #he, #ka {
+            margin: 0 10px; /* margin-bottom 제거하고 좌우 여백 추가 */
             font-size: 20px;
             font-weight: bold;
             border: 2px solid #3498db;
-            padding: 5px;
+            padding: 10px 20px;
             border-radius: 10px;
             background-color: #fff;
-            width: 150px;
-            margin: 0 auto;
+            width: 200px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #he:hover, #ka:hover {
+            background-color: lightsalmon;
+            color: #fff;
+        }
+
+        .category-container {
+            text-align: center; /* 센터 정렬 추가 */
+        }
+
+        .category {
+            margin-bottom: 10px; /* 아래 여백 추가 */
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #3498db;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            display: inline-block; /* 수직 정렬을 위해 inline-block으로 변경 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+            width: 200px;
+        }
+
+        .category:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <div id="warp">
-        <div id="head">
-            <div id="headname">
-                <h1>일본어 공부 홈페이지</h1>
-                <div id="he"><a href="#">히라가나 연습</a></div>
-                <div id="ka"><a href="#">가타카나 연습</a></div>
-            </div>
+    <div id="headname">
+        <h1>일본어 공부 홈페이지</h1>
+        <div id="button-container"> <!-- 버튼들을 감싸는 div 추가 -->
+            <div id="he"><a href="#">히라가나 연습</a></div>
+            <div id="ka"><a href="#">가타카나 연습</a></div>
+        </div>
+        
+        <div class="category-container"> <!-- 카테고리들을 감싸는 div 추가 -->
+            <div class="category"><a href="#">JLPT N4급</a></div>
+            <div class="category"><a href="#">JLPT N3급</a></div>
+            <div class="category"><a href="#">JLPT N2급</a></div>
+            <div class="category"><a href="#">JLPT N1급</a></div>
         </div>
     </div>
 </body>
