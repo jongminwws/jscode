@@ -10,7 +10,9 @@
         let sum = 1;
         let x = parseInt(prompt(""))
         let y = parseInt(prompt(""))
-        for (let i = x; i <= y; i++) {
+        let min = Math.min(x,y);
+        let max = Math.max(x,y);
+        for (let i = min; i <= max; i++) {
             sum *= i;
         }
         document.write(sum);
