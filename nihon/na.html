@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jang 😊</title>
+    <link rel = "stylesheet" href = "./css/main.css">
+    <link rel = "stylesheet" href = "./css/scroll.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'); /* 글꼴 */
+
+    /* 이 부분이 없으면 스크롤 바 두 개가 생성된다 */
+body {
+    overflow: hidden;
+    font-family: 'Roboto Slab', serif;
+}
+
+/* Scroll down */
+
+#container{
+    width:100%;
+    height:100vh; 
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+.list{
+    width:100%; 
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+}
+
+.list:nth-child(2){
+    background-color: #4e5a56;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+.list:nth-child(3){
+    background-color: #9d949e;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+.list:nth-child(4){
+    background-color: #e0d8cc;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center; 
+}
+
+.list:nth-child(5){
+    background-color: lightpink;
+    background-size: cover;
+    background-attachment: fixed; 
+    background-position: center; 
+}
+        h3 {
+            font-family: 'Pretendard-Thin';
+            color: #ffffff;
+            text-align: center;
+            font-style: italic;
+            font-weight: lighter;
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        
+        /* 상단바 */
+        
+        .menu * {
+            display: inline;
+        }
+        
+        .menu li {
+            margin: 35px;
+        }
+        
+        .menu li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        
+        .menu ul {
+            padding-left: 0px;
+        }
+        
+        .menu {
+            font-size: 20px;
+            font-style: italic;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+        } 
+        
+        /* page 1 */
+        
+        .one {
+            background-size: cover;
+            text-align: center;
+            padding-top: 180px;
+            padding-bottom: 130px;
+        }
+        
+        .profile {
+            border-radius: 30%;
+            display: inline-block;
+            padding: 0.5rem;
+            margin-top: 20px;
+            border: 1px solid gray;
+            background-color: white;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+        }
+        
+        .profile img {
+            border-radius: 30%;
+        }
+        .profile1 img {
+            border-radius: 30%;
+        }
+        
+        /* page 2 */
+        
+        .intext {
+            float: right;
+            margin-top: 35px;
+            padding-left: 50px;
+        }
+        
+        /* page 3 */
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .lists{
+            text-align: center;
+            font-family: 'Pretendard-Thin';
+            display: block;
+            text-align: center;
+            font-weight: 400;
+            font-family: 'Pretendard-Thin';
+            font-size: 18px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .list_img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 7vh 5vh;
+            margin-bottom: 50px;
+        }
+        
+        .favorites {
+            display:inline-flex;
+            margin-top: 60px;
+        }
+        
+        /* page 4 */
+        
+        .four {
+            text-align: center;
+            align-items: center;
+        }
+        
+        .contact_img {
+            width: 100%;
+            height: 500px;
+            padding-bottom: 60px;
+        }
+        
+        .ct {
+            margin-top: 80px;
+            font-family: 'Roboto Slab', serif;
+            text-decoration: none;
+            color: white;
+            font-size: 50px;
+            font-style: italic;
+            margin: 35px;
+        }
+        .profile1 {
+            border-radius: 30%;
+            display: inline-block;
+            padding: 0.5rem;
+            margin-top: 20px;
+            border: 1px solid gray;
+            background-color: lightcyan;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+        }
+        #sidebar {
+            width: 250px;
+            background-color: lightyellow;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: fixed;
+            top: 200px; /* 기존 위치에서 더 내려감 */
+            left: 20px;
+            z-index: 1000;
+            font-size: 25px;
+        }
+
+        #sidebar img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #sidebar h2 {
+            color: darkslategray;
+        }
+
+        #sidebar p {
+            color: gray;
+        }
+
+        /* 광고판 스타일 */
+        #buy {
+            animation: flux 1s infinite alternate;
+            border: 1px solid black;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: fixed;
+            top: 555px;
+            left: 20px;
+            width: 268px;
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        #buy a {
+            color: red;
+            text-decoration: none;
+        }
+
+        #buy:hover {
+            animation-play-state: paused;
+        }
+        @keyframes flux {
+            0%,
+            100% {
+                text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE,
+                    .5vw .5vw .1vw #147280;
+                color: #28D7FE;
+            }
+
+            50% {
+                text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180,
+                    .5vw .5vw .1vw #0A3940;
+                color: #146C80;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            /* 모바일 화면에서 적용될 스타일 */
+            img {
+                height: 200px;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <img src="image/mm.jpg">
+        <!-- 광고판 내용 -->
+        <p>이 친구가 따뜻함이라는 것을 알까요??</p>
+</div>
+    <div id="buy">
+        <h2><a href="#four">기영이에게 이불 선물하기!</a></h2>
+        <a href="#none" class="btnClose">
+            <img src="http://sdsupport.cafe24.com/img/guide/tip/btn_close.png" alt="배너 닫기" />
+        </a>
+    </div>
+<div id="container">
+    <header id = "header"> 
+        <nav class ="menu">
+            <ul>
+                <li><a href = "#two"<b>나는 누구인가?</b></a></li>
+                <li><a href = "#three"<b>나의 사진</b></a></li>
+                <li><a href = "#four"<b>후원문의</b></a></li>
+                <li><a href = "#text1"<b>질문</b></a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="list" id="one">
+        <div class="one">
+            <span class="profile"><img src="image/me1.jpg" width="550px;" height="550px" alt=""/></span> 
+            <h3><strong>欢迎光临~!.</strong> <br>请慢慢儿看~</h3>
+        </div>
+    </div>
+
+    <div class="list" id="two">
+        <div class ="two">
+            <img class = "me" src ="image/my.jpg" alt="" width="450px;" height="500px">
+            <h3 class ="intext"> <strong>自己紹介を簡単にします<br>どうぞよろしくお願いします</strong><br><br>
+                こんにちは。私のホームページへようこそ.<br>
+                私は日本のアニメが好きです。 ワンピースとナルトは最近呪術回転をよく見ます. <br>
+                たとえ韓国人ですが、よろしくお願いします. <br>
+                私は人と話すことが大好きです ここに来た方とも友達になりたいです. <br>
+                <br><br>
+                谢谢您读长篇文章</h3>
+        </div>
+    </div>
+
+    <div class="list" id="three">
+        <div class="three">
+            <h1><br><br> 😊 😊 😊 </h1>
+            <div class = "favorites">
+                <div class="lists">
+                    <img class = "list_img" src="image/m4.jpg" alt="">
+                    <p class = "list_text"> 水族館でパシャッ<br></p>
+                </div>
+
+                <div class="lists">
+                    <img class = "list_img" src="image/me2.jpg" alt="">
+                    <p class = "list_text"> アメリカ旅行に行ってパシャリ</p>
+                </div>
+
+                <div class="lists">
+                    <img class = "list_img" src="image/me3.jpg" alt="">
+                    <p class = "list_text"> たまには日本にも行きます</p>
+                </div>
+
+                <div class="lists">
+                    <img class = "list_img" src="image/me1.jpg" alt="">
+                    <p class = "list_text"> 風景写真を撮るのが好きです 💕</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list" id="four">
+        <div class="four">
+            <h1><br><br> 🤪 🤧 😢 🤕 👶 </h1>
+            <span class="profile1"><img src="image/me.jpg" width="550px;" height="550px" alt=""/></span> 
+            <h3><strong>👀 5만 원 이상만 받음 👀 !</strong> <br> ❤ 계좌번호 : 농협 352-0979-1508-73 ❤</h3>
+        </div>
+    </div>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuLinks = document.querySelectorAll(".menu a");
+    
+            menuLinks.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+    
+                    const targetId = this.getAttribute("href");
+                    const targetSection = document.querySelector(targetId);
+    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+        });
+</script>
+</body>
+</html>
