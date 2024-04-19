@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 신청서</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- 유효성 검사 시 아래 검사항목을 사용하여 작성한다. O
+    · 필수 입력 요소: 아이디, 비밀번호 / 비밀번호 재확인, 이름, 성별 체크, 이메일, 약관 동의 O
+    · 아이디는 입력 시 영문자, 숫자 조합(5~20자리 입력) O
+    · 비밀번호 입력 시 영문자, 숫자, 특수기호 조합(8~25자리 입력) O
+    · 비밀번호 재확인 입력 시 일치할 것 O
+    · 전화번호 입력시 숫자만 입력 O
+    . 생년월일의 월을 1~12월까지 목록으로 나타나도록 구현한다. O
+    . 각 항목의 대한 유효성검사에 대한 결과를 css를 이용하여 나타나도록 구현한다. O -->
+    <div id="warp">
+        <label for="id">아이디</label>
+        <input type="text" id="id" size="20" maxlength="10">
+        <input type="button" value="중복확인" id="idCheckBtn" onClick="checkDuplicate()">
+        <span id="idError" style="color: red;"></span> <br>
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password" size="20" maxlength="10" onkeyup="checkPassword()"
+            placeholder="영문자+숫자+특수문자 조합">
+        <span id="passwordError" style="color: red;"></span><br>
+        <label for="repassword">비밀번호 재확인</label>
+        <input type="password" name="repassword" id="repassword" size="20" maxlength="10" onkeyup="checkPassword()">
+        <span id="repasswordError" style="color: red;"></span> <br>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" size="20" maxlength="10"> <br>
+        <form id="membershipForm" onsubmit="return checkForm()">
+            <label for="year">생년월일</label>
+            <input type="text" name="year" id="year" size="4" maxlength="4" placeholder="년(4자)">
+            <label for="month"></label>
+            <select id="month" name="month" placeholder="월">
+                <option value="1">1월</option>
+                <option value="2">2월</option>
+                <option value="3">3월</option>
+                <option value="4">4월</option>
+                <option value="5">5월</option>
+                <option value="6">6월</option>
+                <option value="7">7월</option>
+                <option value="8">8월</option>
+                <option value="9">9월</option>
+                <option value="10">10월</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option>
+            </select>
+            <input type="text" name="day" id="day" size="2" maxlength="2" placeholder="일">
+        </form>
+        <label>성별</label>
+        <input type="radio" name="gender" id="male" value="여">여
+        <input type="radio" name="gender" id="female" value="남">남 <br>
+        <label for="phoneNumber">전화번호</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');">
+        ex "-"없이 숫자만 입력 <br>
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email"> @ <input type="text" name="email2" id="email2">
+        <select name="email_type" id="emailtp" onchange="updateEmail()">
+            <option value="직접 입력">직접 입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="gmail.com">gmail.com</option>
+            <option value="yahoo.com">yahoo.com</option>
+        </select> <br>
+        <label for="address1">주소</label>
+        <input type="text" name="address1" id="address1" size="30" maxlength="30">
+        <input type="button" value="검색" onClick="searchAddress()">
+        <br>
+        <label>기본주소</label>
+        <input type="text" name="address2" id="address2" size="30" maxlength="30"> <br>
+        <label>상세주소</label>
+        <input type="text" name="address3" id="address3" size="30" maxlength="30"> <br>
+        <label>약관동의</label> <input type="checkbox" name="agreement">약간에 동의합니다 <br>
+        <div class="center">
+            <input type="submit" value="이전페이지로" onClick="return check()">
+            &nbsp;&nbsp;&nbsp;
+            <input type="reset" value="가입하기" onclick="checkForm()">
+        </div>
+    </div> 
+</body>
+<script src="validation.js"></script>
+</html>

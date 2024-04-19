@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #wrap {
+            width: 820px;
+            margin: 0px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        header {
+            margin: 0 auto;
+            width: 800px;
+            height: 95px;
+            background-color: #2d3a4b;
+            position: relative;
+        }
+
+        #main {
+            width: 820px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #logo {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+        }
+
+        #top_menu {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            color: white;
+        }
+
+        #top_menu a {
+            color: white;
+        }
+
+        nav {
+            position: absolute;
+            bottom: 10px;
+            left: 220px;
+            font-size: 16px;
+        }
+
+        nav li {
+            display: inline;
+            margin-left: 30px;
+        }
+
+        nav li a {
+            color: white;
+        }
+
+        #main {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background-image: url('imge/air.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: white;
+            padding-top: 100px;
+            position: relative;
+        }
+        .highlight {
+            color: blue;
+        }
+        .hi {
+            color: lightgoldenrodyellow; 
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin-top: -100px;
+            margin-left: -50px;
+        }
+
+
+        .earth-image {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: -100px;
+            left: -350px;
+
+        }
+
+        .air-image {
+            display: none;
+        }
+
+        #main>h2,
+        #main>p {
+            position: relative;
+            left: 100px;
+            top: -10px;
+        }
+
+        #main2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #main2 .service,
+        #main2 .product {
+            display: flex;
+            align-items: center;
+            width: 300px;
+            margin-bottom: 10px;
+
+        }
+
+        #main2 .service img,
+        #main2 .product img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        #main2 h3,
+        #main2 p {
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        footer {
+            width: 800px;
+            height: 130px;
+            margin: 0px auto 0;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        .foto {
+            float: left;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        footer .foto {
+            clear: both;
+            margin-top: 0px;
+            
+        }
+
+        .fo {
+            display: block;
+            text-align: center;
+            margin: auto;
+            position: relative;
+            top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="logo"><span class="hi">POFOLIO</span>.COM</h1>
+            <p class="logo">No1.글로벌솔루션도기업</p>
+            <div id="top_menu">
+                <a href="#">HOME</a> |
+                <a href="#">NOTICE</a> |
+                <a href="#">LOGIN</a> |
+                <a href="#">JOIN</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">COMPANY</a></li>
+                    <li><a href="#">PRODUCT</a></li>
+                    <li><a href="#">CUSTOMER</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">RECRUIT</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="main">
+            <div class="image-container">
+                <img src="imge/earth.jpg" class="earth-image">
+                <img src="imge/air.jpg" class="air-image">
+            </div>
+            <h2>세상을 움직이는 <span class="highlight">포폴리오</span></h2>
+            <p>포폴리오는 전세계의 포트폴리오 솔루션을 <br> 개발하는 벤처기업입니다.</p>
+        </div>
+        <div id="main2">
+            <div class="service">
+                <img src="imge/com.jpg" id="com">
+                <div class="text">
+                    <h3>서비스 소개</h3>
+                    <p>포트폴리오 솔려션, 보안솔루션, 웹 서버 호스팅 등의 서비스를 제공합니다</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="imge/cctv.jpg">
+                <div class="text">
+                    <h3>제품 소개</h3>
+                    <p>보안장비, CCTV 장비 및 소프트웨어 포트폴리오 솔루션을 소개합니다.</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h1 class="foto">POFOLIO.COM</h1>
+            <p class="foto">No1.글로벌솔루션도기업</p>
+            <p class="fo">주소 : 서울시 강남구 서초구 가나다동 123번지 대표 : 홍길동 사업자 번호 123-4567-123</p>
+            <p class="fo"> 전화:1588-0000 FAX : 02-333-4444 이메일 : webmaster@pofoilo.com</p>
+            <span class="fo">COPYRIGHT POFOLIO All Right Reserved</span>
+        </footer>
+</body>
+
+</html>
