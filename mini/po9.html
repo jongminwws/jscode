@@ -1,227 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold" rel="stylesheet">
+    <title>로그인 페이지</title>
+    <link href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold"
+        rel="stylesheet">
     <style>
+        /* body 전체적인 설정*/
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background: linear-gradient(45deg, Violet, Orange);
-            position: relative;
+            padding: 0px;
         }
 
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        #main {
-            background-color: white;
-            border-radius: 10px;
-            width: calc(50% - 5px); /* 화면 너비의 절반에서 간격을 뺀 크기 */
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: -5px 5px 5px gray;
-            position: absolute; /* 절대 위치 지정 */
-            top: 50%; /* 화면 세로 중앙으로 위치 */
-            left: 690px; /* 화면 가로 중앙으로 위치 */
-            transform: translate(-50%, -50%); /* 가운데 정렬 */
-        }
-        
-        #main > * {
-            margin-left: 20px;
-        }
-        #logo{
-            margin-left: 120px;
-        }
-        #log,#soc{
-            margin-right: 125px;
-        }
-
-        #radioso {
-            margin-bottom: 30px; 
-        }
-        #name,#pass {
-            padding: 6px;
-            width: 300px;
-            border-width: 0 0 1px;
-        }
-
-        #name:hover,#pass:hover {
-            border-width: 0 0 1px;
-            border-bottom: 1px solid black;
-        }
-        #checklogin{
+        * {
+            margin: 0;
             padding: 0;
         }
-        [type="radio"],[type = "checkbox"] {
-            accent-color: red;
+
+        header {
+            background-color: #FD6161;
+            height: 130px;
         }
-        [type = "checkbox"] {
-            margin-top: 20px;
-            border-color: red;
+
+        .topbar {
+            background-color: #ffffff;
+            border-radius: 200px 0px 0px 0px/100px 0px 0px 0px;
+            height: 100px;
+            z-index: 3;
         }
-        #name, #pass {
-            margin-bottom: 20px;
-            width: 400px; /* 수정된 가로 너비 */
+
+        .navMenu {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
         }
-        
-        #sw, #sa {
-            position: relative;
-            left: 150px;
-            margin: 5px;
-            margin-top: 10px;
-            padding: 10px;
-        }
-        #sw {
-            background-color: lightcyan;
-            border: none;
-            border-radius: 10px;
-        }
-        #login {
-            text-align: center;
-            background-color: lightcoral;
-            color: white;
-            font-size: 20px;
-            border: 1px solid black;
-            border: none;
-            border-radius: 10px;
-            width: 420px;
-            margin-top: 20px;
-            padding: 15px;
-        }
-        #findid, #findpa {
+
+        .dropdown {
             display: inline-block;
-            text-align: center;
-            margin-top: 20px;
-            text-decoration: none;
-            color: black;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.3s;
-            margin-right: 20px;
-            margin-left: 50px; 
-            margin-bottom: 10px;
         }
-        
-        #findid:hover, #findpa:hover, #findres:hover {
-            border-bottom: 1px solid black; /* hover 시 밑줄 생성 */
-        }
-        
-        #join {
-            padding: 10px 20px;
-            border: 1px solid black;
-            color: white;
+
+        .dropbtn {
             border: none;
-            background-color: #00256c;
-            position: absolute;
-            border-radius: 10px;
-            text-align: center; 
-            padding: 15px;
-            width: 390px;
-            text-decoration: none;
-            top: 70%;
-            left: 63%;
-            font-size: 20px;
-            transform: translate(-50%, -50%);
+            background-color: transparent;
+            font-size: 1em;
+            height: 20px;
+            width: 100px;
+            margin: 40px auto;
+            font-weight: bold;
+            font-family: AppleSDGothicNeoEB;
         }
+
+        .dropbtnLeanguage {
+            border: none;
+            font-size: 1em;
+            background-color: transparent;
+            font-family: AppleSDGothicNeoEB;
+        }
+
+        .leanguageMenu {
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .dropbtnLeanguage:hover .leanguageMenu {
+            display: block;
+        }
+
+        .dropdownMenu {
+            width: auto;
+            height: auto;
+            display: none;
+            border-radius: 15px;
+            position: absolute;
+            background-color: #ffffff;
+            z-index: 4;
+        }
+
+        .dropdownMenu a {
+            color: #000000;
+            margin: 20px 25px;
+            border-bottom: 3px solid transparent;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+
+        }
+
+        .dropdownMenu a:hover {
+            border-bottom: 3px solid #FD6161;
+            transition: all 0.4s;
+        }
+
+        .dropdown:hover .dropdownMenu {
+            display: block;
+        }
+
+        .logo img {
+            height: 45px;
+            width: 236.5px;
+        }
+
+        .rightMenu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .rightMenu button {
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+        }
+
+        /* 뒤에 배경*/
+        #container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            margin: 0;
+            justify-content: center;
+            background: linear-gradient(90deg, Violet, Orange);
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-size: 100% 100vh;
+        }
+
+        /* 후지산 사진 전체블록 설정*/
+        #huzi-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* 후지산 사진*/
         #huzi {
             border: 1px solid black;
             border: none;
-            border-radius: 10px;
-            box-shadow: 5px 5px 5px gray;
+            border-radius: 10px 0px 0px 10px;
+            box-shadow: -5px 5px 10px gray;
             width: 500px;
-            height: 550px;
-            float: right; /* 오른쪽으로 배치 */
+            height: 700px;
+            padding: auto;
         }
-        #imge {
-            float: left; /* 왼쪽으로 배치 */
-            width: calc(50% - 5px); /* 화면 너비의 절반에서 간격을 뺀 크기 */
-            box-sizing: border-box;
-            margin-left: 5px; /* 왼쪽 간격 설정 */
-        }
-        #air {
-            padding: 10px 20px;
-            color: white;
-            text-align: center;
+
+        /* 후지산 사진 밑에 로고*/
+        #huzilogo {
             position: absolute;
-            top: 40%;
-            left: 53%;
-            font-size: 20px;
-            transform: translate(-50%, -50%);
-            animation: animate 2s infinite;
-            font-family: "Apple SD Gothic Neo Bold";
+            bottom: 150px;
+            left: 25%;
         }
-        @keyframes animate {
-            0% {
-            transform: scale(1);
-            }
-            50% {
-            transform: scale(1.15);
-            }
-            100% {
-            transform: scale(1);
-            }
+
+        /* main 전체적인 화면*/
+        #main-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* main 화면*/
+        #main {
+            position: relative;
+            background-color: white;
+            border: none;
+            border-radius: 0px 10px 10px 0px;
+            width: 500px;
+            padding: 10px;
+            height: 700px;
+            box-shadow: 5px 5px 10px gray;
+            box-sizing: border-box;
+        }
+
+        /* 로고 사진*/
+        #logo {
+            margin: 15px auto;
+            display: grid;
+        }
+
+        /* 로그인 제목*/
+        h1 {
+            padding-left: 20px;
+            /* 왼쪽 패딩을 추가하여 오른쪽으로 이동 */
+        }
+
+        /*아이디 */
+        #id {
+            float: left;
+        }
+
+        /*비밀번호 */
+        #password {
+            float: left;
+        }
+
+        /*아이디, 비밀번호 찾기 스타일 */
+        #name,
+        #pass {
+            box-sizing: border-box;
+            display: block;
+            width: 90%;
+            height: 2rem;
+            border: 0;
+            border-bottom: 1px solid #00256c;
+            border-radius: 0;
+            color: #000;
+            font-size: 20px;
+        }
+
+        /*아이디 비밀번호 칸 마우스 클릭했을 때 */
+        #name:hover,
+        #pass:hover {
+            border-width: 0 0 1px;
+            border-color: black;
+        }
+
+        /*비밀번호 저장 체크 박스 색상 */
+        [type="checkbox"] {
+            accent-color: red;
+        }
+
+        /*아이디, 저장 체크버튼 */
+        #id_save{
+
+        }
+
+        /*전체적인 라벨 */
+        #label {
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /*이건 머임 */
+        #sw,
+        #sa {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+
+        /*로그인 버튼 */
+        #login {
+            background-color: lightcoral;
+            width: 95%;
+        }
+
+        /*회원가입 버튼 */
+        .lojo {
+            padding: 10px 20px;
+            border: 1px solid black;
+            color: white;
+            border: none;
+            background-color: lightcoral;
+            position: relative;
+            /* 부모 요소(main)를 기준으로 위치 조정 */
+            border-radius: 30px 50px 50px 0px;
+            text-align: center;
+            padding: 10px;
+            width: 20%;
+            text-decoration: none;
+            margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            float: right;
+        }
+
+        /*아이디, 비밀번호 찾기 스타일 */
+        #findid,
+        #findpa {
+            display: inline-block;
+            text-align: center;
+            margin-top: 35px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: border-color 0.3s;
+            background-color: white;
+            margin-right: 20px;
+            font-size: 15px;
+        }
+
+        /*아이디, 비밀번호 찾기 마우스 올렸을 때 */
+        #findid:hover,
+        #findpa:hover {
+            border-color: lightcoral;
+        }
+
+        /*main2 구역 */
+        #main2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+
+        #kakao,
+        #google,
+        #naver {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #kakao>a,
+        #google>a,
+        #naver>a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            border: none;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
         }
         
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .item a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* 링크에 밑줄 제거 */
+        }
+        
+        .item img {
+            margin-right: 10px;
+        }
+        
+        .item div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .item strong {
+            margin-bottom: 5px;
+        }
+        .item span {
+            margin-bottom: 5px; /* span 요소의 아래쪽 여백을 추가하여 텍스트 간격을 조절합니다. */
+        }        
+        .footerInfos {
+            display: flex;
+            padding: 0.5% 15%;
+            justify-content: space-between;
+            text-align: left;
+            border-top: 1px solid #939393;
+        }
+
+        .fooerInfoSns {
+            display: flex;
+        }
+
+        .footerInfoTitle {
+            color: #FD6161;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .snsIcon {
+            padding: 10% 8%;
+        }
+
+        .snsIcon a {
+            text-decoration: none;
+        }
+
+        .snsIcon img {
+            display: flex;
+            margin: 0px auto;
+        }
+
+        .snsIcon p {
+
+            color: #000000;
+            font-size: 0.3em;
+            font-weight: bolder;
+        }
+
+        .footerLinks {
+            padding: 0 15%;
+        }
+
+        .links {
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+        }
+
+        .links a {
+            margin-top: 1%;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .companyInfo {
+            margin-top: 2%
+        }
     </style>
 </head>
-<body>
-    <div id="container">
-        </div>
-        <div id="main" style="width: 500px; height: 550px;">
-            <img src="img/logo.png" id="logo">
-            <h1 >로그인</h1> 
-            <form>
-                <input type="radio" id="checklogin" name="loginType" checked>
-                <label for="checklogin" id="log">아이디</label>
-                <input type="radio" id="radioso" name="loginType">
-                <label for="radioso" id="soc">소셜 네트워크</label>
-            </form>
-            <form>
-                <label id="id"> 아이디</label><br>
-                <input type="text" id="name"> <br>
-                <label id="password">비밀번호 </label><br>
-                <input type="password" id="pass"> <br>
-                <input type="checkbox">아이디 저장 <br>
-                <button id="login" type="submit">로그인</button> <br>
-                <a href="#" id="findid">아이디 찾기 ></a>
-                <a href="#" id="findpa">비밀번호 찾기 ></a> <br>
-            </form>
-        </div>
-            <div id="imge">
-            <img src="img/huzz.jpg" id="huzi" style="width: 500px;" height="570px;">
-            <div class="centered-text">
-                <p id="air">여행 어디까지 가봤나요? <br>제트에어와 함께 여러분의 꿈을 펼쳐보세요.</p>
-                <a href="#" id="join">회원가입</a>
-            </div>
-    </div>
-    
-    <script>                        
-        const loginRadio = document.getElementById('checklogin');
-        const socialRadio = document.getElementById('radioso');
-        const loginForm = document.querySelector('form');
-        // 라디오 버튼 눌렀을 때 나오는 화면 
-        loginRadio.addEventListener('click', function() {
-            loginForm.style.display = 'block';
-        });
-        socialRadio.addEventListener('click', function() {
-            loginForm.style.display = 'block';
-        });
 
-        //로그인 버튼
-        const loginButton = document.getElementById('login');
-        loginButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            alert('로그인 되었습니다.');
-        });
-    </script>
+<body>
+    <header style="width: 1920px;">
+        <div class="topbar">
+            <div class="navMenu">
+                <div class="logo">
+                    <a href="#"><!--메인화면 이동 링크-->
+                        <img src="img/logo.png">
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">항공권예매
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">항공권 예매</a>
+                        <a href="#">단체 예매(10인 이상)</a>
+                        <a href="#">항공권 선물하기</a>
+                        <a href="#">이용 안내</a>
+                        <a href="#">전자 항공권</a>
+                        <a href="#">항공권 재발행</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">예매 조회</button>
+                    <div class="dropdownMenu">
+                        <a href="#">나의 여정</a>
+                        <a href="#">여정 변경</a>
+                        <a href="#">여정 취소</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">멤버십
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">제트 멤버십 혜택</a>
+                        <a href="#">제트 멤버십 가입</a>
+                        <a href="#">멤버십 가입 해지</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">온라인면세점
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">공항별 면세점 위치</a>
+                        <a href="#">Jet Shop</a>
+                        <a href="#">면세점 이용 안내</a>
+                    </div>
+                </div>
+                <div class="rightMenu">
+                    <button href="#">로그인</button>
+                    <span>&nbsp|&nbsp</span>
+                    <div class="dropdown">
+                        <button class="dropdownMen">한국어 / Korean ▼</button>
+                        <div class="dropdownMenu">
+                            <a href="#">한국어</a>
+                            <a href="#">English</a>
+                            <a href="#">日本語</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--메인 추가-->
+        <div id="container">
+            <div id="huzi-container">
+                <img src="img/huzz.jpg" id="huzi">
+                <img src="img/logo copy.png" id="huzilogo">
+            </div>
+            <div id="main-container">
+                <div id="main">
+                    <img src="img/logo.png" id="logo">
+                    <h1>로그인</h1>
+                    <form id="label">
+                        <label id="id"> 아이디</label><br>
+                        <input type="text" id="name"> <br>
+                        <label id="password">비밀번호 </label><br>
+                        <input type="password" id="pass"> <br>
+                        <div id="id_save">
+                        <input type="checkbox" class="idsave"><label for="chkSaveID" id="labelSaveID" class="id_save">아이디 저장</label> <br>
+                        </div>
+                        <button id="login" type="submit" class="lojo">로그인</button>
+                        <a href="#" id="join" class="logo lojo">회원가입</a>
+                        <button onclick="findid()" id="findid">아이디 찾기 ></button>
+                        <button onclick="findpass()" id="findpa">비밀번호 찾기 ></button> <br>
+                        <div class="container">
+                            <div class="item">
+                                <a href="#">
+                                    <img src="img/kakao_logo.png" alt="카카오 로고">
+                                    <div>
+                                        <strong>카카오톡</strong>
+                                        <span>카카오 로그인</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="img/google_logo.png" alt="구글 로고" style="margin-right: 20px;">
+                                    <div>
+                                        <strong>구글</strong>
+                                        <span>구글 로그인</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="img/naver_logo.png" alt="네이버 로고">
+                                    <div>
+                                        <strong>네이버</strong>
+                                        <span>네이버 로그인</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer style="width: 1920px;">
+        <div class="footerInfos">
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">예약센터</p>
+                <p>1234-5678</p>
+                <p>00:00 ~ 24:00</p>
+                <p>연중휴무</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">고객센터</p>
+                <p>5678-9123</p>
+                <p>00:00 ~ 24:00</p>
+                <p>연중휴무</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">점검시간</p>
+                <strong><span>월~금</span> </strong>
+                <span>00:00 ~ 24:00</span>
+                <br>
+                <strong><span>토~일</span></strong>
+                <span>00:00 ~ 24:00</span>
+                <p>(한국시간 기준)</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">마케팅/광고 문의</p>
+                <p>gh1065@naver.com</p>
+                <p>디자이너 이메일</p>
+            </div>
+            <div class="fooerInfoSns">
+                <div class="snsIcon">
+                    <a href="#">
+                        <img src="img/instagram.png">
+                        <p>@___jm109</p>
+                    </a>
+                </div>
+                <div class="snsIcon">
+                    <a href="#">
+                        <img src="img/youtube.png">
+                        <p>Jet_Airlines</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="footerLinks" style="background-color: #8F8F8F;">
+            <div class="links">
+                <a href="#">
+                    <p>회사안내</p>
+                </a>
+                <a href="#">
+                    <p>보도자료</p>
+                </a>
+                <a href="#">
+                    <p>채용정보</p>
+                </a>
+                <a href="#">
+                    <p>운송약관</p>
+                </a>
+                <a href="#">
+                    <p>이용약관</p>
+                </a>
+                <a href="#">
+                    <p>개인정보이용안내</p>
+                </a>
+            </div>
+            <div class="companyInfo">
+                <p>JetAirlines㈜ 대표이사 곽두팔 사랑시 고백구 행복동 (우)12345</p>
+                <p>개인정보보호책임자 강백호</p>
+                <p>온라인 마케팅 팀장 김청룡</p>
+                <p>Copyright 2024 BY ZET AIRLINES. All Rights reserved</p>
+            </div>
+        </div>
+    </footer>
 </body>
+<script>
+    /*const loginRadio = document.getElementById('checklogin');
+    const socialRadio = document.getElementById('radioso');
+    const loginForm = document.getElementById('label'); // 로그인 폼
+    const socialLoginForm = document.getElementById('main2'); // 소셜 네트워크 로그인 폼
+
+    socialLoginForm.style.display = 'none';
+
+    loginRadio.addEventListener('click', function () {
+        loginForm.style.display = 'block'; // 로그인 폼 보이기
+        socialLoginForm.style.display = 'none'; // 소셜 네트워크 로그인 폼 숨기기
+    });
+
+    socialRadio.addEventListener('click', function () {
+        loginForm.style.display = 'none'; // 로그인 폼 숨기기
+        socialLoginForm.style.display = 'block'; // 소셜 네트워크 로그인 폼 보이기
+    });*/
+
+    const loginButton = document.getElementById('login');
+    loginButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        const username = document.getElementById('name').value;
+        const password = document.getElementById('pass').value;
+
+        if (username === 'wkdwhd43' && password === '123456789a') {
+            alert('로그인 되었습니다.');
+        } else {
+            alert('아이디 또는 비밀번호가 올바르지 않습니다. 다시 확인해주세요.');
+        }
+    });
+</script>
+
 </html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jet_Airlines : Beyond Horizons, Transcending Skies on Every Journey</title>
+    <!--<link rel="stylesheet" type="text/css" href="D:\20240304KDT\HTML_Test project\WebContent\homepage\JetAirlinesMainHP.css">-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #FD6161;
+            height: 130px;
+        }
+        .topbar {
+            background-color: #ffffff;
+            border-radius: 200px 0px 0px 0px/100px 0px 0px 0px;
+            height: 100px;
+            z-index: 3;
+        }
+
+        .navMenu {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100%;
+        }
+
+        .dropdown {
+            display: inline-block;
+        }
+
+        .dropbtn {
+            border: none;
+            background-color: transparent;
+            font-size: 1em;
+            height: 20px;
+            width: 100px;
+            margin: 40px auto;
+            font-weight: bold;
+            font-family: AppleSDGothicNeoEB;
+        }
+
+        .dropbtnLeanguage {
+            border: none;
+            font-size: 1em;
+            background-color: transparent;
+            font-family: AppleSDGothicNeoEB;
+        }
+
+        .leanguageMenu{
+            width: auto;
+            height: auto;
+            display: none;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .dropbtnLeanguage:hover .leanguageMenu{
+            display: block;
+        }
+
+        .dropdownMenu {
+            width: auto;
+            height: auto;
+            display: none;
+            border-radius: 15px;
+            position: absolute;
+            background-color: #ffffff;
+            z-index: 4;
+        }
+
+        .dropdownMenu a {    
+            color: #000000;
+            margin: 20px 25px;
+            border-bottom: 3px solid transparent;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            
+        }
+
+        .dropdownMenu a:hover {
+            border-bottom: 3px solid #FD6161;
+            transition: all 0.4s;
+        }
+
+        .dropdown:hover .dropdownMenu {
+            display: block;
+        }
+
+        .logo img {
+            height: 45px;
+            width: 236.5px;
+        }
+
+        .rightMenu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .rightMenu button {
+            text-decoration: none;
+            border: none;
+            background-color: transparent;
+        }
+        /*---------------------------------------------------------------------------*/
+        /*메인 css 추가*/
+        /*---------------------------------------------------------------------------*/
+        .footerInfos{
+            display: flex;
+            padding: 0.5% 15%;
+            justify-content: space-between;
+            text-align: left;
+            border-top: 1px solid #939393;
+        }
+        .fooerInfoSns{
+            display: flex;
+        }
+        .footerInfoTitle{
+            color: #FD6161;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .snsIcon{
+            padding: 10% 8%;
+        }
+        .snsIcon a{
+            text-decoration: none;
+        }
+        .snsIcon img{
+            display: flex;
+            margin: 0px auto;
+        }
+        .snsIcon p{
+
+            color: #000000;
+            font-size: 0.3em;
+            font-weight: bolder;
+        }
+        .footerLinks{
+            padding: 0 15%;
+        }
+        .links{
+            display: flex;
+            width: 50%;
+            justify-content: space-between;
+        }
+        .links a{
+            margin-top: 1%;
+            color: #000000;
+            font-weight: bold;
+        }
+        .companyInfo{
+            margin-top: 2%
+        }
+    </style>
+</head>
+
+<body>
+    <header style="width: 1920px;">
+        <div class="topbar">
+            <div class="navMenu">
+                <div class="logo">
+                    <a href="#"><!--메인화면 이동 링크-->
+                        <img src="HomepageImage\logo.PNG">
+                    </a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">항공권예매
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">항공권 예매</a>
+                        <a href="#">단체 예매(10인 이상)</a>
+                        <a href="#">항공권 선물하기</a>
+                        <a href="#">이용 안내</a>
+                        <a href="#">전자 항공권</a>
+                        <a href="#">항공권 재발행</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">예매 조회</button>
+                    <div class="dropdownMenu">
+                        <a href="#">나의 여정</a>
+                        <a href="#">여정 변경</a>
+                        <a href="#">여정 취소</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">멤버십
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">제트 멤버십 혜택</a>
+                        <a href="#">제트 멤버십 가입</a>
+                        <a href="#">멤버십 가입 해지</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">온라인면세점
+                    </button>
+                    <div class="dropdownMenu">
+                        <a href="#">공항별 면세점 위치</a>
+                        <a href="#">Jet Shop</a>
+                        <a href="#">면세점 이용 안내</a>
+                    </div>
+                </div>
+                <div class="rightMenu">
+                    <button href="#">로그인</button>
+                    <span>&nbsp|&nbsp</span>
+                    <div class="dropdown">
+                        <button class="dropdownMen">한국어 / Korean ▼</button>
+                        <div class="dropdownMenu">
+                            <a href="#">한국어</a>
+                            <a href="#">English</a>
+                            <a href="#">日本語</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--메인 추가-->
+    </main>
+    <footer style="width: 1920px;">
+        <div class="footerInfos">
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">예약센터</p>
+                <p>1234-5678</p>
+                <p>00:00 ~ 24:00</p>
+                <p>연중휴무</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">고객센터</p>
+                <p>5678-9123</p>
+                <p>00:00 ~ 24:00</p>
+                <p>연중휴무</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">점검시간</p>
+                <strong><span>월~금</span> </strong>
+                <span>00:00 ~ 24:00</span>
+                <br>
+                <strong><span>토~일</span></strong>
+                <span>00:00 ~ 24:00</span>
+                <p>(한국시간 기준)</p>
+            </div>
+            <div class="fooerInfo">
+                <p class="footerInfoTitle">마케팅/광고 문의</p>
+                <p>gh1065@naver.com</p>
+                <p>디자이너 이메일</p>
+            </div>
+            <div class="fooerInfoSns">
+                <div class="snsIcon">
+                    <a href="#">
+                        <img src="HomepageImage\instagram.png">
+                        <p>@gwanho_yun98</p>
+                    </a>
+                </div>
+                <div class="snsIcon">
+                    <a href="#">
+                        <img src="HomepageImage\youtube.png">
+                        <p>Jet_Airlines</p>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="footerLinks" style="background-color: #8F8F8F;">
+            <div class="links">
+                <a href="#">
+                    <p>회사안내</p>
+                </a>
+                <a href="#">
+                    <p>보도자료</p>
+                </a>
+                <a href="#">
+                    <p>채용정보</p>
+                </a>
+                <a href="#">
+                    <p>운송약관</p>
+                </a>
+                <a href="#">
+                    <p>이용약관</p>
+                </a>
+                <a href="#">
+                    <p>개인정보이용안내</p>
+                </a>
+            </div>
+            <div class="companyInfo">
+                <p>JetAirlines㈜ 대표이사 곽두팔 사랑시 고백구 행복동 (우)12345</p>
+                <p>개인정보보호책임자 강백호</p>
+                <p>온라인 마케팅 팀장 김청룡</p>
+                <p>Copyright 2024 BY ZET AIRLINES. All Rights reserved</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
