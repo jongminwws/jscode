@@ -22,6 +22,8 @@
         header {
             background-color: #FD6161;
             height: 130px;
+            max-width: 1920px;
+            min-width: 1440px;
         }
 
         .topbar {
@@ -120,7 +122,8 @@
         /* 뒤에 배경*/
         #container {
             height: 100vh;
-            width: 100%;
+            max-width: 1920px;
+            min-width: 1440px;
             display: flex;
             margin: 0;
             justify-content: center;
@@ -219,14 +222,24 @@
             border-color: black;
         }
 
+        /*비밀번호 저장 체크 박스 위치 */
+        [type="checkbox"] {
+            float: left;
+            /* 왼쪽으로 이동 */
+            margin-right: 5px;
+            /* 원하는 만큼 오른쪽 여백 추가 */
+        }
+
         /*비밀번호 저장 체크 박스 색상 */
         [type="checkbox"] {
             accent-color: red;
         }
 
         /*아이디, 저장 체크버튼 */
-        #id_save{
-
+        label[for="checkin"] {
+            position: relative;
+            top: -5.5px;
+            float: left;
         }
 
         /*전체적인 라벨 */
@@ -251,7 +264,9 @@
             background-color: lightcoral;
             width: 95%;
         }
-
+        #login:hover {
+            background:linear-gradient(90deg, Violet, Orange);
+        }
         /*회원가입 버튼 */
         .lojo {
             padding: 10px 20px;
@@ -271,6 +286,12 @@
             margin-right: auto;
             font-size: 20px;
             float: right;
+            transition: background-color 0.3s;
+        }
+
+        .lojo:hover {
+            background: linear-gradient(90deg, Violet, Orange);
+            color: white;
         }
 
         /*아이디, 비밀번호 찾기 스타일 */
@@ -290,6 +311,12 @@
             font-size: 15px;
         }
 
+        #findid, #findpa > a {
+            text-decoration: none;
+        }
+        a {
+            text-decoration: none;
+        }
         /*아이디, 비밀번호 찾기 마우스 올렸을 때 */
         #findid:hover,
         #findpa:hover {
@@ -326,40 +353,69 @@
             padding: 5px;
             border: none;
         }
+
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 50px;
+            margin-top: 20px;
         }
-        
+
         .item {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
+            border: 1px solid transparent; /* 투명한 테두리 설정 */
+            padding: 5px; /* 내부 여백 조정 */
+            border-radius: 20px;
+            transition: border-color 0.3s, background-color 0.3s;
         }
         
-        .item a {
-            display: flex;
-            align-items: center;
-            text-decoration: none; /* 링크에 밑줄 제거 */
+        /* 호버 시 테두리와 배경색 변경 */
+        .item:hover {
+            border-color: #00256c;
         }
         
+        /* 이미지에 여백 추가 */
         .item img {
-            margin-right: 10px;
+            margin-right: 15px;
         }
         
+        /* 텍스트 스타일 조정 */
         .item div {
             display: flex;
             flex-direction: column;
         }
         
         .item strong {
+            font-size: 18px;
+            color: #00256c; 
+        }
+        
+        .item span {
+            color: #555;
+        }
+
+        .item a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .item div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item span {
             margin-bottom: 5px;
         }
-        .item span {
-            margin-bottom: 5px; /* span 요소의 아래쪽 여백을 추가하여 텍스트 간격을 조절합니다. */
-        }        
+
+        footer{
+            max-width: 1920px;
+            min-width: 1440px;
+        }
+
         .footerInfos {
             display: flex;
             padding: 0.5% 15%;
@@ -421,7 +477,7 @@
 </head>
 
 <body>
-    <header style="width: 1920px;">
+    <header>
         <div class="topbar">
             <div class="navMenu">
                 <div class="logo">
@@ -499,12 +555,13 @@
                         <label id="password">비밀번호 </label><br>
                         <input type="password" id="pass"> <br>
                         <div id="id_save">
-                        <input type="checkbox" class="idsave"><label for="chkSaveID" id="labelSaveID" class="id_save">아이디 저장</label> <br>
+                            <input type="checkbox" name="" value="">
+                            <label for="checkin">자동 로그인</label>
                         </div>
                         <button id="login" type="submit" class="lojo">로그인</button>
                         <a href="#" id="join" class="logo lojo">회원가입</a>
-                        <button onclick="findid()" id="findid">아이디 찾기 ></button>
-                        <button onclick="findpass()" id="findpa">비밀번호 찾기 ></button> <br>
+                        <button onclick="findid()" id="findid"><a href="http://127.0.0.1:5500/mini/idfind.html" target="_blank">아이디 찾기 ></a></button>
+                        <button onclick="findpass()" id="findpa"><a href="http://127.0.0.1:5500/mini/passwordfind.html" target="_blank">비밀번호 찾기 ></a></button> <br>
                         <div class="container">
                             <div class="item">
                                 <a href="#">
@@ -517,7 +574,7 @@
                             </div>
                             <div class="item">
                                 <a href="#">
-                                    <img src="img/google_logo.png" alt="구글 로고" style="margin-right: 20px;">
+                                    <img src="img/google_logo.png" alt="구글 로고" style="margin-right: 25px;">
                                     <div>
                                         <strong>구글</strong>
                                         <span>구글 로그인</span>
@@ -534,14 +591,12 @@
                                 </a>
                             </div>
                         </div>
-                        
                     </form>
-
                 </div>
             </div>
         </div>
     </main>
-    <footer style="width: 1920px;">
+    <footer>
         <div class="footerInfos">
             <div class="fooerInfo">
                 <p class="footerInfoTitle">예약센터</p>
@@ -566,7 +621,7 @@
             </div>
             <div class="fooerInfo">
                 <p class="footerInfoTitle">마케팅/광고 문의</p>
-                <p>gh1065@naver.com</p>
+                <p>wkdwhd43@naver.com</p>
                 <p>디자이너 이메일</p>
             </div>
             <div class="fooerInfoSns">
@@ -615,23 +670,6 @@
     </footer>
 </body>
 <script>
-    /*const loginRadio = document.getElementById('checklogin');
-    const socialRadio = document.getElementById('radioso');
-    const loginForm = document.getElementById('label'); // 로그인 폼
-    const socialLoginForm = document.getElementById('main2'); // 소셜 네트워크 로그인 폼
-
-    socialLoginForm.style.display = 'none';
-
-    loginRadio.addEventListener('click', function () {
-        loginForm.style.display = 'block'; // 로그인 폼 보이기
-        socialLoginForm.style.display = 'none'; // 소셜 네트워크 로그인 폼 숨기기
-    });
-
-    socialRadio.addEventListener('click', function () {
-        loginForm.style.display = 'none'; // 로그인 폼 숨기기
-        socialLoginForm.style.display = 'block'; // 소셜 네트워크 로그인 폼 보이기
-    });*/
-
     const loginButton = document.getElementById('login');
     loginButton.addEventListener('click', function (event) {
         event.preventDefault();
