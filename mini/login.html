@@ -220,6 +220,11 @@
         #pass:hover {
             border-width: 0 0 1px;
             border-color: black;
+            box-shadow: 0 0 0 1px lightcoral;
+            transition: padding .2s,border .2s,background .2s,color .2s,box-shadow .2s;
+            outline: 0;
+            border-bottom-color: transparent;
+            border-radius: .2rem;
         }
 
         /*비밀번호 저장 체크 박스 위치 */
@@ -373,7 +378,7 @@
         
         /* 호버 시 테두리와 배경색 변경 */
         .item:hover {
-            border-color: #00256c;
+            border-color: lightcoral;
         }
         
         /* 이미지에 여백 추가 */
