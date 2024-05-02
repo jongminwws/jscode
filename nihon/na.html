@@ -228,66 +228,9 @@ body {
         #sidebar p {
             color: gray;
         }
-
-        /* 광고판 스타일 */
-        #buy {
-            animation: flux 1s infinite alternate;
-            border: 1px solid black;
-            background-color: black;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: fixed;
-            top: 555px;
-            left: 20px;
-            width: 268px;
-            z-index: 1000;
-            padding: 10px;
-        }
-
-        #buy a {
-            color: red;
-            text-decoration: none;
-        }
-
-        #buy:hover {
-            animation-play-state: paused;
-        }
-        @keyframes flux {
-            0%,
-            100% {
-                text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE,
-                    .5vw .5vw .1vw #147280;
-                color: #28D7FE;
-            }
-
-            50% {
-                text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180,
-                    .5vw .5vw .1vw #0A3940;
-                color: #146C80;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            /* 모바일 화면에서 적용될 스타일 */
-            img {
-                height: 200px;
-                width: 200px;
-            }
-        }
     </style>
 </head>
 <body>
-    <div id="sidebar">
-        <img src="image/mm.jpg">
-        <!-- 광고판 내용 -->
-        <p>이 친구가 따뜻함이라는 것을 알까요??</p>
-</div>
-    <div id="buy">
-        <h2><a href="#four">기영이에게 이불 선물하기!</a></h2>
-        <a href="#none" class="btnClose">
-            <img src="http://sdsupport.cafe24.com/img/guide/tip/btn_close.png" alt="배너 닫기" />
-        </a>
-    </div>
 <div id="container">
     <header id = "header"> 
         <nav class ="menu">
@@ -302,7 +245,7 @@ body {
     <div class="list" id="one">
         <div class="one">
             <span class="profile"><img src="image/me1.jpg" width="550px;" height="550px" alt=""/></span> 
-            <h3><strong>欢迎光临~!.</strong> <br>请慢慢儿看~</h3>
+            <h3><strong>こんにちは!.</strong> <br>私の履歴書です~</h3>
         </div>
     </div>
 
@@ -349,8 +292,8 @@ body {
     <div class="list" id="four">
         <div class="four">
             <h1><br><br> 🤪 🤧 😢 🤕 👶 </h1>
-            <span class="profile1"><img src="image/me.jpg" width="550px;" height="550px" alt=""/></span> 
-            <h3><strong>👀 5만 원 이상만 받음 👀 !</strong> <br> ❤ 계좌번호 : 농협 352-0979-1508-73 ❤</h3>
+            <span class="profile1"><img src="image/dd.jpg" width="350px;" height="350px" alt=""/></span> 
+            <h3><strong>👀 나의 경력 👀 !</strong> <br>첫번째 : 그린아카데미 iot 교육 받음</h3>
         </div>
     </div>
 <script>

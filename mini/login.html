@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>로그인 페이지</title>
     <link href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold"
         rel="stylesheet">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
     <style>
         /* body 전체적인 설정*/
         body {
@@ -221,7 +224,7 @@
             border-width: 0 0 1px;
             border-color: black;
             box-shadow: 0 0 0 1px lightcoral;
-            transition: padding .2s,border .2s,background .2s,color .2s,box-shadow .2s;
+            transition: padding .2s, border .2s, background .2s, color .2s, box-shadow .2s;
             outline: 0;
             border-bottom-color: transparent;
             border-radius: .2rem;
@@ -269,9 +272,11 @@
             background-color: lightcoral;
             width: 95%;
         }
+
         #login:hover {
-            background:linear-gradient(90deg, Violet, Orange);
+            background: linear-gradient(90deg, Violet, Orange);
         }
+
         /*회원가입 버튼 */
         .lojo {
             padding: 10px 20px;
@@ -316,12 +321,15 @@
             font-size: 15px;
         }
 
-        #findid, #findpa > a {
+        #findid,
+        #findpa>a {
             text-decoration: none;
         }
+
         a {
             text-decoration: none;
         }
+
         /*아이디, 비밀번호 찾기 마우스 올렸을 때 */
         #findid:hover,
         #findpa:hover {
@@ -370,33 +378,35 @@
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            border: 1px solid transparent; /* 투명한 테두리 설정 */
-            padding: 5px; /* 내부 여백 조정 */
+            border: 1px solid transparent;
+            /* 투명한 테두리 설정 */
+            padding: 5px;
+            /* 내부 여백 조정 */
             border-radius: 20px;
             transition: border-color 0.3s, background-color 0.3s;
         }
-        
+
         /* 호버 시 테두리와 배경색 변경 */
         .item:hover {
             border-color: lightcoral;
         }
-        
+
         /* 이미지에 여백 추가 */
         .item img {
             margin-right: 15px;
         }
-        
+
         /* 텍스트 스타일 조정 */
         .item div {
             display: flex;
             flex-direction: column;
         }
-        
+
         .item strong {
             font-size: 18px;
-            color: #00256c; 
+            color: #00256c;
         }
-        
+
         .item span {
             color: #555;
         }
@@ -416,7 +426,7 @@
             margin-bottom: 5px;
         }
 
-        footer{
+        footer {
             max-width: 1920px;
             min-width: 1440px;
         }
@@ -478,7 +488,6 @@
         .companyInfo {
             margin-top: 2%
         }
-        
     </style>
 </head>
 
@@ -566,11 +575,14 @@
                         </div>
                         <button id="login" type="submit" class="lojo">로그인</button>
                         <a href="#" id="join" class="logo lojo">회원가입</a>
-                        <button onclick="findid()" id="findid"><a href="http://127.0.0.1:5500/mini/idfind.html" target="_blank">아이디 찾기 ></a></button>
-                        <button onclick="findpass()" id="findpa"><a href="http://127.0.0.1:5500/mini/passwordfind.html" target="_blank">비밀번호 찾기 ></a></button> <br>
+                        <button onclick="findid()" id="findid"><a href="http://127.0.0.1:5500/mini/idfind.html"
+                                target="_blank">아이디 찾기 ></a></button>
+                        <button onclick="findpass()" id="findpa"><a href="http://127.0.0.1:5500/mini/passwordfind.html"
+                                target="_blank">비밀번호 찾기 ></a></button> <br>
+                        <div></div>
                         <div class="container">
                             <div class="item">
-                                <a href="#">
+                                <a href="#" id="kakaoLogin">
                                     <img src="img/kakao_logo.png" alt="카카오 로고">
                                     <div>
                                         <strong>카카오톡</strong>
@@ -579,7 +591,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="#">
+                                <a href="#" class="g-signin2" data-onsuccess="onSignIn">
                                     <img src="img/google_logo.png" alt="구글 로고" style="margin-right: 25px;">
                                     <div>
                                         <strong>구글</strong>
@@ -688,7 +700,55 @@
             alert('아이디 또는 비밀번호가 올바르지 않습니다. 다시 확인해주세요.');
         }
     });
-    // 
+    // 카카오톡 로그인
+    function saveToDos(token) { //item을 localStorage에 저장합니다. 
+        typeof (Storage) !== 'undefined' && sessionStorage.setItem('AccessKEY', JSON.stringify(token));
+    };
+
+    window.Kakao.init('본인 JAVASCRIPT API 키');
+
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+            scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
+            success: function (response) {
+                saveToDos(response.access_token)  // 로그인 성공하면 사용자 엑세스 토큰 sessionStorage에 저장
+                window.Kakao.API.request({ // 사용자 정보 가져오기 
+                    url: '/v2/user/me',
+                    success: (res) => {
+                        const kakao_account = res.kakao_account;
+                        alert('로그인 성공');
+                        window.location.href = '/ex/kakao_login.html'
+                    }
+                });
+            },
+            fail: function (error) {
+                console.log(error);
+            }
+        });
+    };
+
+    const login = document.querySelector('#kakaoLogin');
+    login.addEventListener('click', kakaoLogin);
+    //카카오톡 로그아웃
+    window.Kakao.init('본인 JAVASCRIPT API 키');
+    function kakaoLogout() {
+        if (!Kakao.Auth.getAccessToken()) {
+            console.log('Not logged in.');
+            return;
+        }
+        Kakao.Auth.logout(function (response) {
+            alert(response + ' logout');
+            window.location.href = '/'
+        });
+    };
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
 </script>
 
 </html>
