@@ -1,0 +1,42 @@
+//서버 주소(member.jsp)
+1.데이터 가져오기
+String id = requestgetParameter("id");
+String paswword = requestgetParameter("password");
+//2  db연결 
+driver 정보
+String driver = "com.mysql.jdbc.Driver";
+url 정보
+String url = "jdbc:mysql://localhost:3306/exam?serverTimezone = Asia/Seoul;    serverTimezone = Asia/Seoul; = 우리나라 날짜 및 시간을 고려하기 위한 옵션 
+id 정보 
+String id = "root";
+password 정보
+String pw = "1234";
+
+Db에 insert
+insert into member
+values('id','pas','email','name','birth','phonekind','gender','local','phonenumber')
+;
+
+//회원 정보 수정
+update member
+set password = password, -- 비밀번호 수정
+    name = name, -- 이름 수정
+    phonenumber = phonenumber -- 폰 번호 수정
+where id = id -- 내 정보만 수정
+;
+
+//탈퇴
+delete from member -- 이렇게만 작성하면 모든 정보가 다 삭제 됨
+where id = id -- 나만 탈퇴
+
+//로그인
+ResultSet rs = null;
+rs = select * from member
+where id = 'abcd1234' -- 사용자가 입력한 값
+and password = '1234' -- 사용자가 입력한 값 둘다 맞아야 하니깐 and
+
+if(select 결과(rs) != null) {
+//로그인 해도 됨(select 결과(Resultset)가 null아니면)
+} else {
+// 로그인 하면 안됨.(select 결과(Resultset)가 null이면)
+}

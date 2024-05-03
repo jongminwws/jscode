@@ -555,6 +555,8 @@
     </header>
     <main>
         <!--메인 추가-->
+        <form action="서버주소">
+            <!-- 서버주소 보내기 -->
         <div id="container">
             <div id="huzi-container">
                 <img src="img/huzz.jpg" id="huzi">
@@ -566,11 +568,13 @@
                     <h1>로그인</h1>
                     <form id="label">
                         <label id="id"> 아이디</label><br>
+                        <!-- request.getparmater("id") html에 입력한 데이터 값 가져오기 -->
                         <input type="text" id="name"> <br>
                         <label id="password">비밀번호 </label><br>
+                        <!-- request.getparmater("password") html에 입력한 데이터 값 가져오기 -->
                         <input type="password" id="pass"> <br>
                         <div id="id_save">
-                            <input type="checkbox" name="" value="">
+                            <input type="checkbox" name="" value=""><!--라디오 버튼 같은 경우 value에 설정한 값이 저장됨 -->
                             <label for="checkin">자동 로그인</label>
                         </div>
                         <button id="login" type="submit" class="lojo">로그인</button>
@@ -613,6 +617,7 @@
                 </div>
             </div>
         </div>
+    </form>
     </main>
     <footer>
         <div class="footerInfos">
