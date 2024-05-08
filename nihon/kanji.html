@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <title>히라가나 맞추기</title>
+    <title>jlpt 한자 맞추기</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -117,7 +117,7 @@
                 width: 200px;
             }
         
-            #se {
+            #se,#ss {
                 font-size: 24px;
                 padding: 10px;
                 width: 150px;
@@ -143,7 +143,7 @@
 </head>
 <body>
     <div id="container">
-        <h2 id="he">랜덤 히라가나 맞추기</h2>
+        <h2 id="he">랜덤 한자 맞추기</h2>
         <div id="scoreContainer">
             <div id="score">맞힌 갯수: <span id="scoreValue">0</span></div>
         </div>
@@ -152,18 +152,19 @@
         </div>
         <img src="image/dd.jpg" width="200" height="200">
         <div id="se"></div>
+        <div id="ss"></div>
         <input type="text" id="sa" placeholder="여기에 정답을 입력하세요">
         <div id="answer"></div>
         <div id="buttonContainer">
-            <button onclick="random()">랜덤 히라가나</button>
+            <button onclick="random()">랜덤 한자</button>
             <button onclick="check()">정답 확인</button>
             <button onclick="show()" onkeypress="checkOnSpace(event)">정답 보기</button>
-            <button onclick="window.open('http://127.0.0.1:5500/nihon/gatakana.html','_blank')">랜덤 가타카나 가기</button>
+            <button onclick="showHiragana()">히라가나 보기</button>
         </div>
         
     </div>
     <script>
-        let ear = ["あ","い","う","え","お","か","き","く","け","こ","が","ぎ","ぐ","げ","ご","さ","し","す","せ","そ","ざ","じ","ず","ぜ","ぞ","た","ち","つ","て","と","だ","ぢ","づ","で","ど","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
+        let ear = ["青い","赤い","明るい","暖かい","頭がいい","暑い","家","重い","家族","家内","軽い","暗い","黒い","細かい","寒い","白い","涼しい","正しい","楽しい","近い","ざ","じ","ず","ぜ","ぞ","た","ち","つ","て","と","だ","ぢ","づ","で","ど","な","に","ぬ","ね","の","は","ひ","ふ","へ","ほ","ば","び","ぶ","べ","ぼ","ぱ","ぴ","ぷ","ぺ","ぽ","ま","み","む","め","も","や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"];
         let hii;
         let score =0;
         let timerValue = 30;
@@ -217,46 +218,46 @@
         }
         function kor(e) {
             switch (e) {
-                case "あ":
-                    return "아";
-                case "い":
-                    return "이";
-                case "う":
-                    return "우";
-                case "え":
-                    return "에";
-                case "お":
-                    return "오";
-                case "か":
-                    return "카";
-                case "き":
-                    return "키";
-                case "く":
-                    return "쿠";
-                case "け":
-                    return "케";
-                case "こ":
-                    return "코";
-                case "が":
-                    return "가";
-                case "ぎ":
-                    return "기";
-                case "ぐ":
-                    return "구";
-                case "げ":
-                    return "게";
-                case "ご":
-                    return "고";
-                case "さ":
-                    return "사";
-                case "し":
-                    return "시";
-                case "す":
-                    return "스";
-                case "せ":
-                    return "세";
-                case "そ":
-                    return "소";
+                case "青い":
+                    return "파랗다";
+                case "赤い":
+                    return "빨갛다";
+                case "明るい":
+                    return "밝다";
+                case "暖かい":
+                    return "따뜻하다";
+                case "頭がいい":
+                    return "머리가 좋다";
+                case "暑い":
+                    return "덥다";
+                case "家":
+                    return "집";
+                case "重い":
+                    return "무겁다";
+                case "家族":
+                    return "가족";
+                case "家内":
+                    return "가내";
+                case "軽い":
+                    return "가볍다";
+                case "暗い":
+                    return "어둡다";
+                case "黒い":
+                    return "검다";
+                case "細かい":
+                    return "미세하다";
+                case "寒い":
+                    return "춥다";
+                case "白い":
+                    return "하얗다";
+                case "涼しい":
+                    return "시원하다";
+                case "正しい":
+                    return "올바른";
+                case "楽しい":
+                    return "즐겁다";
+                case "近い":
+                    return "가깝다";
                 case "ざ":
                     return "자";
                 case "じ":
@@ -364,6 +365,45 @@
         function updateScore(point) {
             score += point;
             document.getElementById("scoreValue").innerHTML = score;
+        }
+        const kanjiMapping = {
+            "青い": "あおい",
+            "赤い": "あかい",
+            "明るい": "あかるい",
+            "暖かい": "あたたかい",
+            "頭がいい": "あたまがいい",
+            "暑い": "あつい",
+            "家": "いえ",
+            "重い": "おもい",
+            "家族": "かぞく",
+            "家内": "かない",
+            "軽い": "かるい",
+            "暗い": "くらい",
+            "細かい": "こまかい",
+            "寒い": "さむい",
+            "白い": "しろい",
+            "涼しい": "すずしい",
+            "正しい": "ただしい",
+            "楽しい": "たのしい",
+            "近い": "ちかい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+            "黒い": "くろい",
+
+        };
+        
+        function showHiragana() {
+            const kanji = document.getElementById("se").innerText.trim();
+            const hiragana = kanjiMapping[kanji];
+            if (hiragana) {
+                document.getElementById("answer").innerText = kanji + " (" + hiragana + ")";
+            } else {
+                document.getElementById("answer").innerText = "히라가나 없음";
+            }
         }
     </script>
 </body>
