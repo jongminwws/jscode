@@ -71,3 +71,23 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', handleSubmit);
     loadTodos();
 });
+
+function calculateDDay(targetDate) {
+    // 현재 날짜 가져오기
+    var currentDate = new Date();
+
+    // 목표 날짜로부터 경과한 밀리초 계산
+    var timeDiff = targetDate.getTime() - currentDate.getTime();
+
+    // 경과한 일 수 계산
+    var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    // D-Day 표시
+    document.getElementById("dDay").innerText += daysDiff + "일";
+}
+
+// 목표 날짜 설정 (7월 7일)
+var targetDate = new Date("2024-07-07");
+
+// D-Day 계산 및 표시
+calculateDDay(targetDate);
