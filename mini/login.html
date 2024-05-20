@@ -9,7 +9,6 @@
     <link href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold"
         rel="stylesheet">
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script src="https://apis.google.com/js/platform.js"></script>
     <style>
         /* body 전체적인 설정*/
         body {
@@ -191,6 +190,7 @@
         /* 로그인 제목*/
         h1 {
             padding-left: 20px;
+            margin-bottom: 15px;
             /* 왼쪽 패딩을 추가하여 오른쪽으로 이동 */
         }
 
@@ -310,6 +310,7 @@
             display: inline-block;
             text-align: center;
             margin-top: 35px;
+            margin-left: 30px;
             text-decoration: none;
             color: black;
             border: 1px solid transparent;
@@ -319,6 +320,10 @@
             background-color: white;
             margin-right: 20px;
             font-size: 15px;
+        }
+        #findpa {
+            margin-left: 15px;
+
         }
 
         #findid,
@@ -371,7 +376,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 50px;
         }
 
         .item {
@@ -594,23 +599,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="item">
-                                <a href="#" class="g-signin2" data-onsuccess="onSignIn">
-                                    <img src="img/google_logo.png" alt="구글 로고" style="margin-right: 25px;">
-                                    <div>
-                                        <strong>구글</strong>
-                                        <span>구글 로그인</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/naver_logo.png" alt="네이버 로고">
-                                    <div>
-                                        <strong>네이버</strong>
-                                        <span>네이버 로그인</span>
-                                    </div>
-                                </a>
+                            <button onclick="loginWithNaver()">네이버 로그인</button>>
                             </div>
                         </div>
                     </form>
@@ -692,7 +681,7 @@
         </div>
     </footer>
 </body>
-<script>
+<script type="text/javascript">
     const loginButton = document.getElementById('login');
     loginButton.addEventListener('click', function (event) {
         event.preventDefault();
@@ -754,6 +743,22 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
 
+
+    function loginWithNaver() {
+        var clientId = "RhYUDtcrGAZKn45AMi7b"; // 네이버 애플리케이션 클라이언트 아이디
+        var redirectURI = encodeURIComponent("http://localhost:8080/jspexample/callback.jsp?callback_url=%EC%84%9C%EB%B2%84%EC%A3%BC%EC%86%8C"); // 콜백 URL
+        var state = Math.random().toString(36).substring(7); // 랜덤한 state 값 생성
+        sessionStorage.setItem("state", state); // state 값 세션에 저장
+
+        // 네이버 OAuth 인증 URL
+        var authURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code"
+                    + "&client_id=" + clientId
+                    + "&redirect_uri=" + redirectURI
+                    + "&state=" + state;
+
+        // 사용자를 네이버 로그인 페이지로 리다이렉트
+        window.location.href = authURL;
+    }
 </script>
 
 </html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 로그인 콜백</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    (function() {
+        var clientId = "RhYUDtcrGAZKn45AMi7b"; // 네이버 애플리케이션 클라이언트 아이디
+        var clientSecret = "tZJcX7bgm9"; // 네이버 애플리케이션 클라이언트 시크릿
+        var redirectURI = encodeURIComponent("http://localhost:8080/jspexample/callback.jsp?callback_url=%EC%84%9C%EB%B2%84%EC%A3%BC%EC%86%8C"); // 콜백 URL
+
+        // 콜백 URL에서 code와 state 파라미터 가져오기
+        var params = window.location.search.substr(1).split('&').reduce(function(q, query) {
+            var chunks = query.split('=');
+            q[chunks[0]] = decodeURIComponent(chunks[1]);
+            return q;
+        }, {});
+
+        var code = params.code;
+        var state = params.state;
+
+        // state 검증
+        if (state !== sessionStorage.getItem("state")) {
+            alert("로그인 요청과 일치하지 않는 상태입니다.");
+            return;
+        }
+
+        // 네이버 OAuth 토큰 요청
+        var tokenURL = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code"
+                    + "&client_id=" + clientId
+                    + "&client_secret=" + clientSecret
+                    + "&redirect_uri=" + redirectURI
+                    + "&code=" + code
+                    + "&state=" + state;
+
+        // AJAX를 이용한 토큰 요청
+        $.ajax({
+            url: tokenURL,
+            type: 'GET',
+            success: function(response) {
+                var accessToken = response.access_token;
+                var refreshToken = response.refresh_token;
+
+                // 토큰을 이용한 추가 작업 수행
+                console.log("Access Token: ", accessToken);
+                console.log("Refresh Token: ", refreshToken);
+            },
+            error: function(xhr, status, error) {
+                console.error("토큰 요청 실패: ", status, error);
+            }
+        });
+    })();
+</script>
+</body>
+</html>
