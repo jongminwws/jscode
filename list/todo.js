@@ -87,7 +87,7 @@ function calculateDDay(targetDate) {
 }
 
 // 목표 날짜 설정 (7월 7일)
-var targetDate = new Date("2024-07-07");
+var targetDate = new Date("2024-09-30");
 
 // D-Day 계산 및 표시
 calculateDDay(targetDate);
